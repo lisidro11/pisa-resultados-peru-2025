@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Resultados PISA del Perú | Estadística DRELM</title>
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/styles.css?v=12">
 </head>
 <body>
 <header class="app-header">
@@ -15,7 +15,17 @@
   </div>
   <div class="navbar">
     <div class="navlinks" id="nav"></div>
-    <div class="participation">▤ &nbsp; Perú ha participado en: <b>2000, 2009, 2012, 2015, 2018, 2022 y 2025.</b></div>
+    <div class="navtools">
+      <div class="view-control" title="Ajusta la densidad del tablero sin reducir la tipografía">
+        <span>Visualización</span>
+        <button data-view="auto" class="active">Auto</button>
+        <button data-view="compact">Compacta</button>
+        <button data-view="normal">Normal</button>
+        <button data-view="expanded">Ampliada</button>
+        <button id="fullScreenBtn" class="fullscreen-btn" title="Pantalla completa">⛶</button>
+      </div>
+      <div class="participation">▤ &nbsp; Perú ha participado en: <b>2000, 2009, 2012, 2015, 2018, 2022 y 2025.</b></div>
+    </div>
   </div>
 </header>
 
@@ -39,19 +49,22 @@
 
     <aside class="side">
       <div class="info">
-        <h3><span class="badge-i">i</span>¿Qué significa la comparación?</h3>
-        <p>Las barras muestran los puntajes promedio de Perú en cada edición PISA comparable. Las líneas punteadas muestran el promedio OCDE 2025 para cada competencia y funcionan como referencia visual.</p>
+        <h3><span class="badge-i">i</span>Lectura ejecutiva 2025</h3>
+        <p><b>Lectura y Matemática disminuyen</b> respecto de 2022; en Ciencia el brochure señala que Perú mantiene sus resultados.</p>
+        <p>En las tres competencias, el puntaje promedio de Perú permanece por debajo del promedio OCDE 2025.</p>
       </div>
       <div class="info">
         <h3>▥ &nbsp; Brecha 2025 vs. promedio OCDE</h3>
         <div class="gap-head"><span>Área</span><span>Perú 2025 / OCDE</span><span>Brecha</span></div>
         <div id="gapRows"></div>
       </div>
-      <div class="info">
-        <h3><span style="color:#f6a31b">●</span> &nbsp; Lectura clave</h3>
-        <p>Respecto de 2022, <b>Matemática</b> y <b>Lectura</b> disminuyen sus puntajes promedio, mientras que <b>Ciencia</b> mantiene sus resultados.</p>
-        <p>Las tres competencias continúan por debajo del promedio OCDE 2025.</p>
-      </div>
+      <article class="metric level summary-level-card">
+        <div class="level-title">Nivel de desempeño en 2025</div>
+        <div class="level-sub">% de estudiantes ubicados en Nivel 2</div>
+        <div class="level-row"><span class="dot" style="background:#3c98a8"></span><b>Ciencia</b><strong>30,6 %</strong></div>
+        <div class="level-row"><span class="dot" style="background:#f6a31b"></span><b>Lectura</b><strong>26,0 %</strong></div>
+        <div class="level-row"><span class="dot" style="background:#20306f"></span><b>Matemática</b><strong>19,7 %</strong></div>
+      </article>
     </aside>
   </div>
 
@@ -59,39 +72,103 @@
     <article class="metric math"><img src="assets/icons/matematica.png"><div class="name">Matemática</div><div class="score">391 → 382</div><div class="delta">−8,8 puntos*</div><p>Disminución significativa respecto de 2022.</p></article>
     <article class="metric read"><img src="assets/icons/lectura.png"><div class="name">Lectura</div><div class="score">408 → 390</div><div class="delta">−18,1 puntos*</div><p>Disminución significativa respecto de 2022.</p></article>
     <article class="metric science"><img src="assets/icons/ciencia.png"><div class="name">Ciencia</div><div class="score">408 → 406</div><div class="delta neutral">−2,2 puntos</div><p>El brochure señala que Perú mantiene sus resultados.</p></article>
-    <article class="metric level"><div class="level-title">Nivel de desempeño en 2025</div><div class="level-sub">% de estudiantes en Nivel 2</div><div class="level-row"><span class="dot" style="background:#3c98a8"></span><b>Ciencia</b><strong>30,6 %</strong></div><div class="level-row"><span class="dot" style="background:#f6a31b"></span><b>Lectura</b><strong>26,0 %</strong></div><div class="level-row"><span class="dot" style="background:#20306f"></span><b>Matemática</b><strong>19,7 %</strong></div></article>
+
   </div>
+
+
+  <section class="exec-gap-panel">
+    <div class="exec-gap-head">
+      <div>
+        <div class="exec-kicker">BRECHAS 2025 POR ESTRATO</div>
+        <h3 id="execGapTitle">Comparación 2025 por Gestión</h3>
+        <p id="execGapContext">Privada vs. Pública · Año 2025</p>
+      </div>
+      <div class="segmented" id="execGapSelector">
+        <button class="active" data-stratum="Gestión">Gestión</button>
+        <button data-stratum="Sexo">Sexo</button>
+        <button data-stratum="Área">Área</button>
+      </div>
+    </div>
+    <div class="exec-gap-grid" id="execGapGrid"></div>
+    <div class="exec-gap-note" id="execGapNote"></div>
+  </section>
 
   <div class="sourcebar"><span><b>Fuente:</b> OECD / Ministerio de Educación – Resultados PISA 2025.</span><span><b>Nota:</b> El asterisco (*) indica diferencias estadísticamente significativas al 0,05 entre ciclos.</span><span>Elaborado por el Equipo de Estadística y Monitoreo – OPP – DRELM.</span></div>
 </section>
 
 <section id="tendencia" class="page">
-  <div class="pagehead"><div class="eyebrow">EVOLUCIÓN HISTÓRICA</div><h1>Tendencia de resultados PISA del Perú</h1><p class="subtitle">Matemática, Lectura y Ciencia en las ediciones comparables 2009, 2012, 2015, 2018, 2022 y 2025.</p></div>
-  <div class="panel standard-panel"><div class="standard-chart" id="trendChart"></div><div class="legend"><div class="leg-item"><span class="leg-dot" style="background:#20306f"></span>Matemática</div><div class="leg-item"><span class="leg-dot" style="background:#f6a31b"></span>Lectura</div><div class="leg-item"><span class="leg-dot" style="background:#3c98a8"></span>Ciencia</div></div></div>
-  <div class="trend-cards"><div class="trend-card" style="background:#f7f9fe"><b>Matemática</b><strong>365 → 382</strong><span>+17 puntos desde 2009</span><small>2022 → 2025: 391 → 382</small></div><div class="trend-card" style="background:#fffaf1"><b>Lectura</b><strong>370 → 390</strong><span>+20 puntos desde 2009</span><small>2022 → 2025: 408 → 390</small></div><div class="trend-card" style="background:#f3fbfc"><b>Ciencia</b><strong>369 → 406</strong><span>+37 puntos desde 2009</span><small>2022 → 2025: 408 → 406</small></div></div>
+  <div class="compact-pagehead"><div><div class="eyebrow">EVOLUCIÓN HISTÓRICA</div><h1>Tendencia de resultados PISA del Perú</h1><p>Ediciones comparables: 2009, 2012, 2015, 2018, 2022 y 2025.</p></div></div>
+  <div class="panel standard-panel trend-panel">
+    <div class="chart-legend-top">
+      <span><i style="background:#20306f"></i>Matemática</span>
+      <span><i style="background:#f6a31b"></i>Lectura</span>
+      <span><i style="background:#3c98a8"></i>Ciencia</span>
+    </div>
+    <div class="standard-chart" id="trendChart"></div>
+  </div>
+  <div class="trend-cards">
+    <div class="trend-card" style="background:#f7f9fe"><b>Matemática</b><strong>391 → 382</strong><span class="trend-delta down">−8,8 puntos*</span><small>Disminución significativa respecto de 2022.</small></div>
+    <div class="trend-card" style="background:#fffaf1"><b>Lectura</b><strong>408 → 390</strong><span class="trend-delta down">−18,1 puntos*</span><small>Disminución significativa respecto de 2022.</small></div>
+    <div class="trend-card" style="background:#f3fbfc"><b>Ciencia</b><strong>408 → 406</strong><span class="trend-delta neutral">−2,2 puntos</span><small>El brochure señala que Perú mantiene sus resultados.</small></div>
+    <div class="trend-reading"><b>Lectura de la tendencia</b><p>Lectura y Matemática disminuyen respecto de 2022; Ciencia mantiene sus resultados. En las tres competencias, Perú permanece por debajo del promedio OCDE 2025.</p></div>
+  </div>
 </section>
 
 <section id="niveles" class="page">
-  <div class="pagehead"><div class="eyebrow">DESEMPEÑO</div><h1>Niveles de desempeño</h1><p class="subtitle">Rangos de puntaje y distribución de estudiantes según competencia.</p></div>
-  <div class="filters"><label>Competencia<select id="levelArea"></select></label></div>
-  <div class="level-grid" id="levelGrid"></div>
-  <div class="note"><b>Nivel 2:</b> PISA lo considera la línea base o punto de partida del dominio requerido para participar en la sociedad actual.</div>
-  <div class="panel standard-panel"><div class="standard-chart" id="levelsChart"></div></div>
+  <div class="analysis-head">
+    <div><div class="eyebrow">DESEMPEÑO</div><h1 id="levelsTitle">Niveles de desempeño – Ciencia</h1><p>Rangos de puntaje y distribución de estudiantes · PISA 2025.</p></div>
+    <label class="inline-filter">Competencia<select id="levelArea"></select></label>
+  </div>
+  <div class="levels-layout">
+    <div class="levels-info">
+      <div class="level-grid" id="levelGrid"></div>
+      <div class="note"><b>Nivel 2:</b> PISA lo considera la línea base o punto de partida del dominio requerido para participar en la sociedad actual.</div>
+    </div>
+    <div class="panel standard-panel levels-chart-panel">
+      <div class="section-minihead">
+        <b>Distribución de estudiantes por nivel</b>
+        <span>Porcentaje de estudiantes · PISA 2025</span>
+      </div>
+      <div class="standard-chart" id="levelsChart"></div>
+    </div>
+  </div>
 </section>
 
 <section id="brechas" class="page">
-  <div class="pagehead"><div class="eyebrow">2022–2025</div><h1>Brechas por estratos</h1><p class="subtitle">Comparación por sexo y tipo de gestión siguiendo el brochure oficial.</p></div>
-  <div class="filters"><label>Competencia<select id="gapArea"></select></label></div>
-  <div class="panel standard-panel"><div class="standard-chart" id="gapChart"></div></div>
-  <div class="note">El asterisco (*) marca diferencias estadísticamente significativas al 0,05 entre estratos en 2025 y/o entre ciclos; la cruz (+) marca diferencias significativas al interior de cada estrato entre 2022 y 2025.</div>
+  <div class="analysis-head">
+    <div><div class="eyebrow">2022–2025</div><h1 id="gapsTitle">Brechas por estratos – Ciencia</h1><p>Sexo, tipo de gestión y área · comparación 2022–2025.</p></div>
+    <label class="inline-filter">Competencia<select id="gapArea"></select></label>
+  </div>
+  <div class="gap-impact" id="gapImpact"></div>
+  <div class="gap-legend">
+    <span><i class="legend-swatch y2022"></i>2022</span>
+    <span><i class="legend-swatch y2025"></i>2025*</span>
+    <span><b>+</b> cambio 2022–2025 estadísticamente significativo dentro del estrato</span>
+  </div>
+  <div class="panel standard-panel gap-panel">
+    <div class="gap-axis-head"><span>Estrato</span><span>Puntaje promedio · 2022 → 2025</span><span>Cambio</span></div>
+    <div id="gapChart" class="gap-dumbbell-chart"></div>
+  </div>
+  <div class="gap-reading" id="gapReading"></div>
+  <div class="note"><b>Nota oficial:</b> El asterisco (*) marca diferencias estadísticamente significativas al 0,05 entre los estratos en 2025 y/o entre ciclos; la cruz (+) marca diferencias estadísticamente significativas al interior de cada estrato entre 2022 y 2025.</div>
 </section>
 
 <section id="regional" class="page">
-  <div class="pagehead"><div class="eyebrow">CONTEXTO REGIONAL</div><h1>Comparación regional 2025</h1><p class="subtitle">Perú frente al promedio OCDE y países seleccionados de América Latina.</p></div>
-  <div class="filters"><label>Competencia<select id="regionalArea"></select></label></div>
-  <div class="panel standard-panel"><div class="tall-chart" id="regionalChart"></div></div>
-  <div class="pagehead"><h1 style="font-size:23px">Promedio de mejora PISA 2009–2025</h1><p class="subtitle">Indicador presentado en el brochure; no equivale a la diferencia simple de puntajes.</p></div>
-  <div class="panel standard-panel"><div class="standard-chart" id="improveChart"></div></div>
+  <div class="analysis-head">
+    <div><div class="eyebrow">CONTEXTO REGIONAL</div><h1 id="regionalTitle">Comparación regional 2025 – Ciencia</h1><p>Perú frente al promedio OCDE y países seleccionados de América Latina.</p></div>
+    <label class="inline-filter">Competencia<select id="regionalArea"></select></label>
+  </div>
+  <div class="regional-layout">
+    <div class="panel standard-panel regional-main-panel">
+      <div class="section-minihead"><b>Resultados PISA 2025</b><span>Puntaje promedio por país / referencia</span></div>
+      <div class="tall-chart" id="regionalChart"></div>
+    </div>
+    <div class="panel standard-panel regional-improve-panel">
+      <div class="section-minihead stacked"><b>Promedio de mejora PISA 2009–2025</b><span>Indicador presentado en el brochure; no equivale a la diferencia simple de puntajes.</span></div>
+      <div class="standard-chart" id="improveChart"></div>
+      <div class="regional-insight" id="regionalInsight"></div>
+    </div>
+  </div>
 </section>
 
 <section id="ficha" class="page">
@@ -109,7 +186,7 @@
   <div class="downloads"><a href="data/medida_promedio.csv" download>Descargar medida promedio</a><a href="data/niveles_desempeno.csv" download>Descargar niveles</a><a href="data/comparacion_regional_2025.csv" download>Descargar comparación regional</a></div>
 </section>
 </main>
-<script src="js/data.js"></script>
-<script src="js/app.js"></script>
+<script src="js/data.js?v=12"></script>
+<script src="js/app.js?v=12"></script>
 </body>
 </html>
