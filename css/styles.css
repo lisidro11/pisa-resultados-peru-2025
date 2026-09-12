@@ -1,0 +1,600 @@
+
+:root{
+ --navy:#20306f;--orange:#f6a31b;--teal:#3c98a8;--red:#d62828;
+ --ink:#1f2430;--muted:#6b7280;--line:#dfe5ef;--panel:#f6f8fc;
+}
+*{box-sizing:border-box}
+html,body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
+button,select{font:inherit}
+.app-header{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--line)}
+.topbar{max-width:1500px;margin:auto;height:50px;padding:4px 14px;display:grid;grid-template-columns:260px 1fr 230px;align-items:center}
+.logo img{width:245px;max-height:40px;object-fit:contain;object-position:left center}
+.titlebrand{text-align:center;color:var(--navy);font-size:19px;font-weight:800;white-space:nowrap}
+.titlebrand b{font-size:29px;letter-spacing:.02em}.titlebrand em{font-style:normal;font-weight:500}
+.credit{text-align:right;color:#5d687d;font-size:10px;line-height:1.25}.credit b{display:block;color:var(--navy);font-size:12px}
+.navbar{max-width:1500px;margin:auto;min-height:39px;padding:3px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #f0f2f6}
+.navlinks{display:flex;gap:3px;align-items:center;flex-wrap:wrap}
+.navlinks button{border:0;background:transparent;color:#555e70;font-weight:800;font-size:11px;padding:7px 10px;border-radius:8px;cursor:pointer}
+.navlinks button.active,.navlinks button:hover{background:#edf1fb;color:var(--navy)}
+.participation{font-size:9.5px;color:#42506c;background:#f4f7fd;border:1px solid #dce3ef;border-radius:9px;padding:6px 10px;white-space:nowrap}
+main{max-width:1500px;margin:auto;padding:7px 14px 12px}
+.page{display:none}.page.active{display:block}
+.panel{border:1px solid var(--line);border-radius:12px;background:#fff}
+.summary{height:calc(100vh - 101px);min-height:620px;display:none;grid-template-rows:minmax(0,1fr) 116px 20px;gap:8px}
+.summary.active{display:grid}
+.summary-main{display:grid;grid-template-columns:minmax(0,3.25fr) minmax(295px,1.12fr);gap:9px;min-height:0}
+.chart-panel{padding:8px 10px 6px;display:flex;flex-direction:column;min-height:0}
+.chart-title{font-weight:900;color:#14245d;font-size:14px;margin:0 0 1px}
+.chart-sub{font-size:9.5px;color:#6b7280;margin:0 0 2px}
+.chart-area{flex:1;min-height:0}
+#summaryChart,#trendChart,#levelsChart,#gapChart,#regionalChart,#improveChart{width:100%;height:100%;display:block}
+.legend{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px 12px;font-size:9.5px;color:#4e5667;padding-top:2px}
+.leg-item{display:flex;align-items:center;gap:5px;white-space:nowrap}.leg-dot{width:11px;height:11px;border-radius:50%;display:inline-block}
+.leg-dash{width:24px;height:0;border-top:2px dashed currentColor;display:inline-block}.sep{height:18px;width:1px;background:#dfe3ea}
+.side{display:grid;grid-template-rows:.88fr 1.02fr 1fr;gap:7px;min-height:0}
+.info{background:#f5f7fb;border:1px solid #dce3ef;border-radius:12px;padding:10px 12px;overflow:hidden}
+.info h3{margin:0 0 5px;color:#14245d;font-size:14px}.info p{margin:4px 0;font-size:10.5px;line-height:1.43}
+.badge-i{display:inline-flex;width:20px;height:20px;border-radius:50%;align-items:center;justify-content:center;background:#2873e7;color:white;margin-right:6px}
+.gap-head,.gap-row{display:grid;grid-template-columns:1fr 1.18fr .5fr;gap:7px;align-items:center}.gap-head{font-size:9.2px;color:#6e7684;padding:1px 0 3px}.gap-row{font-size:10.5px;padding:4px 0;border-bottom:1px solid #e1e6ee}.gap-row strong{color:#d1241f;text-align:right}.gap-area{display:flex;align-items:center;gap:7px}.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.cards{display:grid;grid-template-columns:1fr 1fr 1fr 1.2fr;gap:8px}.metric{border:1px solid #dce3ee;border-radius:12px;padding:8px 10px;min-height:116px}.metric.math{background:#f7f9fe}.metric.read{background:#fffaf1;border-color:#efddbc}.metric.science{background:#f3fbfc;border-color:#cfe8ec}.metric.level{background:#fffbf4;border-color:#eadfc9}
+.metric img{width:30px;height:30px;border-radius:50%;object-fit:cover;float:left;margin:0 7px 3px 0}.metric .name{font-weight:900;color:var(--navy);font-size:13.5px}.metric .score{clear:both;font-weight:900;color:var(--navy);font-size:20px;margin:3px 0 4px}.delta{background:#fde3e1;color:#b42318;text-align:center;border-radius:7px;padding:4px;font-size:11.5px;font-weight:900}.delta.neutral{background:#e3edff;color:#1b397d}.metric p{font-size:9.5px;line-height:1.3;margin:5px 0 0}
+.level-title{font-size:11.5px;font-weight:900}.level-sub{font-size:9px;color:#677080}.level-row{display:grid;grid-template-columns:12px 1fr auto;gap:6px;align-items:center;padding:3px 0;font-size:10px}.level-row strong{font-size:12.5px}
+.sourcebar{display:grid;grid-template-columns:1.05fr 1.3fr 1fr;gap:8px;font-size:8px;color:#627087;align-items:center}
+.pagehead{margin:4px 0 8px}.eyebrow{color:#ef9d13;font-size:11px;font-weight:900;letter-spacing:.16em}.pagehead h1{font-family:Georgia,serif;color:var(--navy);font-size:29px;margin:4px 0}.subtitle{font-size:12px;color:#6a7280;margin:0}
+.standard-panel{padding:12px 14px}.standard-chart{height:470px}.tall-chart{height:570px}
+.trend-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}.trend-card{border:1px solid #dce3ee;border-radius:12px;padding:12px 14px;display:grid;gap:4px}.trend-card strong{font-size:22px;color:var(--navy)}.trend-card span{font-size:11px;font-weight:700}.trend-card small{font-size:10px;color:#6d7480}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:5px 0 8px}.filters label{font-size:11px;font-weight:900;color:#5c6575}.filters select{display:block;margin-top:4px;border:1px solid #ccd4df;border-radius:8px;padding:7px 9px;background:#fff;min-width:150px}
+.level-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:9px}.levelbox{border:1px solid var(--line);border-radius:12px;padding:10px;background:#fff}.levelbox h3{margin:0 0 7px;color:var(--navy);font-size:14px}.range{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #edf0f4;padding:6px;font-size:11px}.range.base{background:#fff1cc;border-radius:6px;font-weight:900}
+.statgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.stat{border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center;background:#fafbfe}.stat strong{display:block;font-size:22px;color:var(--navy)}.stat span{font-size:10px;color:#626b79}
+.compgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.comp{border:1px solid var(--line);border-radius:12px;padding:9px;display:flex;gap:9px;align-items:center;font-size:11px}.comp img{width:38px;height:38px;border-radius:50%;object-fit:cover}
+.tablewrap{max-height:520px;overflow:auto;border:1px solid var(--line);border-radius:12px}table{width:100%;border-collapse:collapse;font-size:11px}th,td{padding:8px;border-bottom:1px solid #e8ebf0;text-align:right}th:first-child,td:first-child{text-align:left}th{position:sticky;top:0;background:#f5f6fa;color:var(--navy)}
+.downloads{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.downloads a{background:var(--navy);color:white;text-decoration:none;border-radius:8px;padding:8px 10px;font-size:10px;font-weight:800}
+.note{background:#fff8e8;border-left:4px solid var(--orange);padding:10px 12px;border-radius:8px;font-size:11px;line-height:1.5;margin:8px 0}
+@media(max-width:1000px){.topbar{grid-template-columns:220px 1fr}.credit{display:none}.summary{height:auto;display:none}.summary.active{display:block}.summary-main{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.chart-area{height:440px}.participation{display:none}.trend-cards,.level-grid,.statgrid,.compgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.topbar{grid-template-columns:1fr}.titlebrand{display:none}.navlinks button{font-size:10px;padding:6px}.cards,.trend-cards,.level-grid,.statgrid,.compgrid{grid-template-columns:1fr}.sourcebar{grid-template-columns:1fr}.logo img{width:240px}.chart-area{height:390px}}
+
+
+/* =========================================================
+   AJUSTE V2 — PROPORCIÓN DEL DISEÑO APROBADO
+   - panel lateral más ancho
+   - tipografía lateral más grande
+   - gráfico ligeramente más reducido
+   - cabecera central más equilibrada
+   ========================================================= */
+
+.topbar{
+  grid-template-columns: 265px minmax(460px,1fr) 235px;
+  height:52px;
+}
+.titlebrand{
+  font-size:20px;
+  letter-spacing:.01em;
+}
+.titlebrand b{
+  font-size:31px;
+}
+.credit{
+  font-size:10.5px;
+}
+.credit b{
+  font-size:12.5px;
+}
+
+.navbar{
+  min-height:40px;
+}
+.navlinks button{
+  font-size:11.5px;
+  padding:7px 11px;
+}
+.participation{
+  font-size:10px;
+  padding:6px 11px;
+}
+
+/* El diseño aprobado da mayor presencia al panel derecho */
+.summary-main{
+  grid-template-columns:minmax(0,2.75fr) minmax(340px,1.15fr);
+  gap:10px;
+}
+
+/* Reducimos un poco la altura útil del gráfico para ganar aire */
+.chart-panel{
+  padding:9px 12px 7px;
+}
+.chart-title{
+  font-size:15px;
+  line-height:1.2;
+}
+.chart-sub{
+  font-size:10.5px;
+  margin-bottom:4px;
+}
+.chart-area{
+  transform:scale(.975);
+  transform-origin:center center;
+}
+
+/* Paneles laterales más cercanos al mockup */
+.side{
+  grid-template-rows:.88fr 1.02fr 1fr;
+  gap:8px;
+}
+.info{
+  padding:13px 15px;
+}
+.info h3{
+  font-size:16px;
+  line-height:1.2;
+  margin-bottom:8px;
+}
+.info p{
+  font-size:12.5px;
+  line-height:1.5;
+  margin:6px 0;
+}
+.badge-i{
+  width:22px;
+  height:22px;
+  font-size:13px;
+}
+.gap-head{
+  font-size:10.5px;
+  padding:2px 0 5px;
+}
+.gap-row{
+  font-size:12px;
+  padding:6px 0;
+}
+.gap-row strong{
+  font-size:14px;
+}
+.gap-area{
+  gap:8px;
+}
+.dot{
+  width:11px;
+  height:11px;
+}
+
+/* Leyenda un poco más legible, sin robar espacio al gráfico */
+.legend{
+  font-size:10.5px;
+  gap:9px 13px;
+  padding-top:4px;
+}
+.leg-dot{
+  width:12px;
+  height:12px;
+}
+.leg-dash{
+  width:26px;
+  border-top-width:2px;
+}
+
+/* Tarjetas inferiores algo más robustas visualmente */
+.cards{
+  gap:9px;
+}
+.metric{
+  padding:10px 12px;
+}
+.metric img{
+  width:34px;
+  height:34px;
+}
+.metric .name{
+  font-size:14.5px;
+}
+.metric .score{
+  font-size:22px;
+}
+.delta{
+  font-size:12.5px;
+  padding:5px;
+}
+.metric p{
+  font-size:10.5px;
+  line-height:1.4;
+}
+.level-title{
+  font-size:12.5px;
+}
+.level-sub{
+  font-size:9.8px;
+}
+.level-row{
+  font-size:11px;
+  padding:4px 0;
+}
+.level-row strong{
+  font-size:13.5px;
+}
+
+/* Pie ligeramente más legible */
+.sourcebar{
+  font-size:8.8px;
+}
+
+/* Pantallas muy anchas: mantener aspecto tipo dashboard del diseño */
+@media(min-width:1280px){
+  main{padding-left:18px;padding-right:18px}
+  .summary-main{
+    grid-template-columns:minmax(0,2.7fr) minmax(355px,1.18fr);
+  }
+}
+
+/* Laptop: evitar que el panel lateral vuelva a encogerse demasiado */
+@media(min-width:1001px) and (max-width:1279px){
+  .summary-main{
+    grid-template-columns:minmax(0,2.65fr) minmax(330px,1.2fr);
+  }
+  .info h3{font-size:15px}
+  .info p{font-size:12px}
+}
+
+/* =========================================================
+   V3 - AJUSTE FINO SEGÚN DISEÑO DE REFERENCIA
+   Objetivo: panel lateral más legible, gráfico algo más pequeño,
+   tarjetas inferiores con mejor respiración y pie sin superposición.
+   ========================================================= */
+
+/* Cabecera */
+.topbar{
+  height:54px !important;
+  grid-template-columns:270px minmax(470px,1fr) 235px !important;
+  padding:4px 16px !important;
+}
+.titlebrand{
+  font-size:21px !important;
+  line-height:1 !important;
+}
+.titlebrand b{
+  font-size:32px !important;
+}
+.credit{
+  font-size:10.5px !important;
+}
+.navbar{
+  min-height:42px !important;
+  padding:4px 16px 5px !important;
+}
+.navlinks button{
+  font-size:11.5px !important;
+  padding:7px 10px !important;
+}
+.participation{
+  font-size:10px !important;
+  padding:6px 10px !important;
+}
+
+/* Resumen: proporciones cercanas al diseño */
+.summary{
+  height:calc(100vh - 104px) !important;
+  min-height:640px !important;
+  grid-template-rows:minmax(0,1fr) 132px 30px !important;
+  gap:9px !important;
+}
+.summary-main{
+  grid-template-columns:minmax(0,2.55fr) minmax(365px,1.08fr) !important;
+  gap:10px !important;
+}
+
+/* Gráfico: un poco más pequeño y centrado */
+.chart-panel{
+  padding:9px 12px 8px !important;
+}
+.chart-title{
+  font-size:15px !important;
+}
+.chart-sub{
+  font-size:10.5px !important;
+  margin-bottom:5px !important;
+}
+.chart-area{
+  transform:scale(.94) !important;
+  transform-origin:center center !important;
+}
+.legend{
+  font-size:10.5px !important;
+  gap:10px 14px !important;
+  padding:3px 0 1px !important;
+}
+
+/* Panel derecho: mayor tamaño y menos aire vacío */
+.side{
+  grid-template-rows:.92fr 1.03fr 1.05fr !important;
+  gap:8px !important;
+}
+.info{
+  padding:14px 16px !important;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+.info h3{
+  font-size:16.5px !important;
+  line-height:1.2 !important;
+  margin:0 0 9px !important;
+}
+.info p{
+  font-size:13px !important;
+  line-height:1.5 !important;
+  margin:5px 0 !important;
+}
+.badge-i{
+  width:23px !important;
+  height:23px !important;
+  font-size:13px !important;
+}
+.gap-head{
+  font-size:10.8px !important;
+  margin-bottom:2px !important;
+}
+.gap-row{
+  font-size:12.6px !important;
+  padding:6px 0 !important;
+}
+.gap-row strong{
+  font-size:14.5px !important;
+}
+.gap-area{
+  gap:8px !important;
+}
+.dot{
+  width:11px !important;
+  height:11px !important;
+}
+
+/* Tarjetas inferiores: menos comprimidas */
+.cards{
+  gap:9px !important;
+}
+.metric{
+  min-height:128px !important;
+  padding:11px 12px 10px !important;
+}
+.metric img{
+  width:35px !important;
+  height:35px !important;
+  margin-right:8px !important;
+}
+.metric .name{
+  font-size:15px !important;
+}
+.metric .score{
+  font-size:23px !important;
+  margin:4px 0 6px !important;
+}
+.delta{
+  font-size:12.5px !important;
+  padding:5px !important;
+}
+.metric p{
+  font-size:10.8px !important;
+  line-height:1.35 !important;
+  margin:6px 0 0 !important;
+}
+.level-title{
+  font-size:13px !important;
+}
+.level-sub{
+  font-size:9.8px !important;
+  margin-bottom:4px !important;
+}
+.level-row{
+  padding:4px 0 !important;
+  font-size:11px !important;
+}
+.level-row strong{
+  font-size:13.5px !important;
+}
+
+/* Pie: separado de las tarjetas, sin superposición */
+.sourcebar{
+  min-height:28px !important;
+  padding:5px 2px 2px !important;
+  border-top:1px solid #edf0f4 !important;
+  font-size:8.8px !important;
+  line-height:1.25 !important;
+  align-items:start !important;
+}
+.sourcebar span{
+  white-space:normal !important;
+}
+
+/* Mejoras en demás pestañas para mantener coherencia */
+.pagehead h1{
+  font-size:31px !important;
+}
+.subtitle{
+  font-size:12.5px !important;
+}
+.standard-panel{
+  padding:14px 16px !important;
+}
+.standard-chart{
+  height:455px !important;
+}
+.tall-chart{
+  height:560px !important;
+}
+
+/* Ajuste específico para pantallas 1366–1600 */
+@media (min-width:1200px) and (max-width:1600px){
+  .summary-main{
+    grid-template-columns:minmax(0,2.5fr) minmax(350px,1.12fr) !important;
+  }
+  .chart-area{
+    transform:scale(.93) !important;
+  }
+}
+
+/* No forzar una sola pantalla cuando la altura es baja */
+@media (max-height:760px) and (min-width:1001px){
+  .summary{
+    height:auto !important;
+    min-height:0 !important;
+    grid-template-rows:auto auto auto !important;
+  }
+  .chart-area{
+    height:430px !important;
+    transform:none !important;
+  }
+}
+
+/* V4 comparación regional: etiquetas de países visibles */
+#regionalChart svg text, #improveChart svg text{
+  font-family: Arial, Helvetica, sans-serif;
+}
+#regionalChart, #improveChart{
+  overflow:visible !important;
+}
+
+/* V5: comparación regional y niveles */
+#regionalChart{
+  overflow: visible !important;
+}
+#regionalChart svg{
+  overflow: visible !important;
+}
+#regionalChart svg text{
+  dominant-baseline: middle;
+}
+
+/* En Niveles, la explicación queda al costado de los rangos, no debajo. */
+#niveles .three{
+  display:grid;
+  grid-template-columns:1.25fr .9fr .9fr;
+  gap:12px;
+  align-items:stretch;
+}
+#niveles .three > *{
+  min-width:0;
+}
+@media (max-width:900px){
+  #niveles .three{
+    grid-template-columns:1fr;
+  }
+}
+
+/* =========================================================
+   V6 — Comparación regional legible con nombres al costado
+   ========================================================= */
+.regional-list{
+  width:100%;
+  padding:8px 6px 4px;
+}
+.regional-head,
+.regional-row{
+  display:grid;
+  grid-template-columns:190px minmax(0,1fr) 60px;
+  gap:12px;
+  align-items:center;
+}
+.regional-head{
+  font-size:10.5px;
+  color:#6b7280;
+  font-weight:700;
+  padding:0 8px 8px;
+  border-bottom:1px solid #e7ebf1;
+}
+.regional-row{
+  min-height:34px;
+  padding:4px 8px;
+  border-bottom:1px solid #f0f2f6;
+}
+.regional-country{
+  font-size:12.5px;
+  color:#48505f;
+  text-align:right;
+  padding-right:6px;
+  white-space:nowrap;
+}
+.regional-row.peru .regional-country,
+.regional-row.ocde .regional-country{
+  color:#20306f;
+  font-weight:900;
+}
+.regional-track{
+  position:relative;
+  height:18px;
+  background:#f4f6f9;
+  border-radius:3px;
+  overflow:hidden;
+}
+.regional-bar{
+  height:100%;
+  min-width:3px;
+  border-radius:2px;
+}
+.regional-score{
+  font-size:12px;
+  font-weight:800;
+  color:#596170;
+}
+.regional-row.peru .regional-score,
+.regional-row.ocde .regional-score{
+  color:#20306f;
+}
+
+.improvement-list .regional-track{
+  background:#fafbfc;
+  overflow:visible;
+}
+.improvement-track{
+  height:18px;
+}
+.improvement-bar{
+  position:absolute;
+  top:0;
+  height:18px;
+}
+.zero-line{
+  position:absolute;
+  top:-3px;
+  bottom:-3px;
+  width:1px;
+  background:#87909f;
+  z-index:2;
+}
+
+/* Niveles: rangos, explicación y resultado claramente al costado */
+#niveles .level-grid{
+  grid-template-columns:minmax(420px,1.35fr) minmax(300px,.95fr) minmax(300px,.95fr) !important;
+  align-items:stretch;
+}
+#niveles .levelbox{
+  min-height:230px;
+}
+#niveles .levelbox:nth-child(2),
+#niveles .levelbox:nth-child(3){
+  padding:14px 16px !important;
+}
+#niveles .levelbox:nth-child(2) p,
+#niveles .levelbox:nth-child(3) p{
+  font-size:12px !important;
+  line-height:1.55 !important;
+}
+#niveles .levelbox:nth-child(3) > div[style*="font-size"]{
+  font-size:38px !important;
+  margin:10px 0 8px;
+}
+#niveles .note{
+  margin-top:10px;
+  font-size:11.5px;
+}
+#niveles #levelsChart{
+  margin-top:2px;
+}
+
+@media(max-width:1000px){
+  .regional-head,.regional-row{
+    grid-template-columns:130px minmax(0,1fr) 52px;
+    gap:8px;
+  }
+  .regional-country{font-size:11px}
+  #niveles .level-grid{
+    grid-template-columns:1fr !important;
+  }
+}
