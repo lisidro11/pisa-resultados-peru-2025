@@ -1826,3 +1826,1327 @@ body.view-auto.view-normal .analysis-head{
     height:clamp(355px,48vh,425px) !important;
   }
 }
+
+
+/* =========================================================
+   V13 - análisis profundo / auditoría PISA
+   ========================================================= */
+.level-foot{font-size:8.5px;color:#667085;margin-top:5px;line-height:1.25}
+.trend-controls,.levels-controls{display:flex;align-items:flex-end;gap:10px;flex-wrap:wrap}
+.trend-controls .inline-filter,.levels-controls .inline-filter{flex-basis:145px}
+.method-alert{
+  border:1px solid #f0d59b;background:#fff8ea;color:#5f4b1f;border-radius:8px;
+  padding:8px 11px;margin:5px 0 8px;font-size:9.5px;line-height:1.4;
+}
+.gap-card{background:#f8fafe}
+.levels-history-grid{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(260px,.65fr);gap:10px}
+.levels-kpis{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-content:start}
+.level-kpi{border:1px solid #dce4ef;background:#fff;border-radius:9px;padding:12px;display:flex;flex-direction:column;gap:5px}
+.level-kpi span{font-size:9px;color:#667085;font-weight:800}
+.level-kpi strong{font-size:22px;color:#102b68}
+.level-kpi.primary{background:#f3f8ff;border-color:#cbdaf0}
+.equity-tabs{display:flex;max-width:100%;overflow-x:auto;margin:5px 0 9px;width:max-content}
+.equity-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.equity-card{border:1px solid #dce4ef;border-radius:9px;background:#fff;padding:11px;min-height:105px;display:flex;flex-direction:column;gap:8px}
+.equity-label{font-size:10px;font-weight:800;color:#344054;line-height:1.3}
+.equity-values{display:flex;gap:16px}
+.equity-values>div{display:flex;flex-direction:column;gap:2px}
+.equity-values span,.equity-card small{font-size:8.5px;color:#667085}
+.equity-values strong{font-size:20px;color:#102b68}
+.equity-reading{margin-top:9px;border-left:4px solid #20306f;background:#f5f9ff;border-radius:7px;padding:9px 12px;font-size:10px;line-height:1.45;color:#465166}
+.ficha-statgrid{grid-template-columns:repeat(5,1fr)!important}
+.comp span{display:block;font-size:8px;color:#667085;margin-top:3px;line-height:1.2}
+.downloads{display:flex;gap:7px;flex-wrap:wrap}
+.downloads a{font-size:9px}
+@media(max-width:1100px){
+ .levels-history-grid{grid-template-columns:1fr}
+ .equity-grid{grid-template-columns:1fr 1fr}
+ .ficha-statgrid{grid-template-columns:repeat(2,1fr)!important}
+}
+@media(max-width:700px){
+ .trend-analysis-head,.analysis-head{align-items:flex-start}
+ .trend-controls,.levels-controls{width:100%}
+ .segmented{max-width:100%;overflow-x:auto}
+ .equity-grid{grid-template-columns:1fr}
+ .levels-kpis{grid-template-columns:1fr 1fr}
+ .ficha-statgrid{grid-template-columns:1fr!important}
+}
+
+/* V14 comparación regional e internacional */
+.intl-tabs{display:flex;width:max-content;max-width:100%;overflow-x:auto;margin:5px 0 9px}.intl-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:8px}
+.intl-kpi{border:1px solid #dce4ef;background:#fff;border-radius:9px;padding:9px 12px;display:flex;flex-direction:column;gap:2px}.intl-kpi span{font-size:8.5px;color:#667085;font-weight:800}.intl-kpi strong{font-size:21px;color:#102b68}.intl-kpi small{font-size:8px;color:#7b8494}
+.intl-main{display:grid;grid-template-columns:minmax(0,2.15fr) minmax(260px,.72fr);gap:9px}.intl-chart{min-height:360px}.intl-reading{border:1px solid #dce4ef;border-left:4px solid #20306f;background:#f7faff;border-radius:8px;padding:13px;font-size:10px;line-height:1.55;color:#465166}.intl-reading b{color:#102b68}.intl-reading p{margin:7px 0 0}
+@media(max-width:1000px){.intl-main{grid-template-columns:1fr}}@media(max-width:650px){.intl-kpis{grid-template-columns:1fr}.intl-chart{min-height:330px}}
+
+/* V15 - panorama regional histórico conservando la vista clásica */
+.regional-head-v15{align-items:flex-end}.regional-filters{display:flex;gap:8px;align-items:flex-end}.regional-main-tabs{margin:4px 0 8px;max-width:100%;overflow-x:auto;width:max-content}
+.regional-classic-grid{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(320px,.95fr);gap:9px}.regional-ranking-panel,.improvement-panel{padding:9px 11px}
+.rr-head,.rr-row{display:grid;grid-template-columns:190px 1fr 56px;gap:10px;align-items:center}.rr-head{font-size:8.5px;color:#667085;border-bottom:1px solid #e3e8ef;padding:5px 0 7px}.rr-row{min-height:27px;border-bottom:1px solid #edf0f4;font-size:9px}.rr-country{display:flex;align-items:center;gap:7px}.rr-country b{font-weight:600}.rr-row.oecd .rr-country b,.rr-row.oecd strong{font-weight:900;color:#102b68}.rr-row.peru .rr-country b,.rr-row.peru strong{font-weight:900;color:#102b68}.rr-bar-track{height:17px;background:#f0f3f8;border-radius:3px;overflow:hidden}.rr-bar{height:100%;background:#c9d4e3;border-radius:3px}.rr-row.oecd .rr-bar{background:#20306f}.rr-row.peru .rr-bar{background:#3c98a8}.mini-flag{width:21px;height:14px;object-fit:cover;border:1px solid #d7dde7;border-radius:1px}
+.improvement-list{display:flex;flex-direction:column;gap:5px;margin-top:7px}.imp-row{display:grid;grid-template-columns:150px 1fr 52px;align-items:center;gap:8px;font-size:9px}.imp-row>div:first-child{display:flex;align-items:center;gap:7px}.imp-axis{height:16px;background:#f3f5f8;position:relative;border-radius:3px}.imp-axis i{position:absolute;left:50%;top:0;bottom:0;width:1px;background:#9aa8ba}.imp-axis span{position:absolute;top:2px;height:12px}.imp-axis .pos{background:#3c98a8}.imp-axis .neg{background:#bcc8d8}.imp-row.peru{font-weight:900}.imp-row.peru .pos,.imp-row.peru .neg{background:#20306f}.regional-reading-small{margin-top:12px;padding:9px;border-left:3px solid #20306f;background:#f5f8fd;border-radius:6px;font-size:9px;line-height:1.45}
+.regional-kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}.regional-kpi{border:1px solid #dce4ef;border-radius:8px;padding:8px 10px;background:#fff;display:flex;flex-direction:column;gap:2px}.regional-kpi span{font-size:8px;color:#667085;font-weight:800}.regional-kpi strong{font-size:19px;color:#102b68}.regional-kpi small{font-size:8px;color:#7b8494}.regional-reading-wide{margin-top:8px;border-left:4px solid #20306f;background:#f5f8fd;border-radius:7px;padding:9px 11px;font-size:9.5px;line-height:1.45;color:#465166}
+.country-selector-wrap{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:5px 0 8px}.country-selector-wrap>b{font-size:10px;color:#102b68}.country-selector-wrap>span{font-size:8px;color:#667085}.country-selector{display:flex;gap:5px;flex-wrap:wrap}.country-chip{border:1px solid #d3dce8;background:#fff;border-radius:999px;padding:5px 8px;font-size:8.5px;display:flex;align-items:center;gap:5px;cursor:pointer}.country-chip.active{background:#20306f;color:#fff;border-color:#20306f}.country-chip .mini-flag{width:18px;height:12px}.regional-evolution-chart{min-height:350px}
+@media(max-width:1100px){.regional-classic-grid{grid-template-columns:1fr}.regional-kpi-row{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.regional-filters{width:100%;flex-wrap:wrap}.rr-head,.rr-row{grid-template-columns:120px 1fr 42px;gap:6px}.imp-row{grid-template-columns:105px 1fr 42px}.regional-kpi-row{grid-template-columns:1fr}.regional-ranking-panel,.improvement-panel{overflow-x:auto}}
+
+/* V16 benchmark internacional */
+.world-toolbar{display:flex;gap:10px;align-items:end;margin:5px 0 8px}.world-toolbar label{font-size:8px;font-weight:800;color:#5d6878;display:flex;flex-direction:column;gap:3px}.world-toolbar select,.world-toolbar input{height:31px;border:1px solid #cfd9e6;border-radius:7px;background:#fff;padding:0 9px;font-size:9px}.world-search{min-width:260px}.world-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:8px}.world-panel{padding:8px 10px}.world-scroll{max-height:465px;overflow-y:auto;padding-right:5px}.world-row{display:grid;grid-template-columns:30px 190px 1fr 55px 80px;gap:8px;align-items:center;min-height:29px;border-bottom:1px solid #edf1f5;font-size:9px}.world-pos{font-weight:800;color:#8390a1;text-align:right}.world-country{display:flex;align-items:center;gap:7px}.world-country b{font-weight:600}.world-track{height:17px;background:#f0f3f8;border-radius:3px;overflow:hidden}.world-track>span{display:block;height:100%;background:#a9bdd1;border-radius:3px}.world-row.oecd .world-track>span{background:#20306f}.world-row.peru .world-track>span{background:#3c98a8}.world-row.oecd b,.world-row.oecd>strong,.world-row.peru b,.world-row.peru>strong{font-weight:900;color:#102b68}.world-row small{font-size:7.5px;color:#758195}.empty-world{padding:20px;text-align:center;color:#778}
+.compare-toolbar{display:flex;align-items:center;justify-content:space-between;margin:5px 0}.compare-toolbar>div{display:flex;flex-direction:column}.compare-toolbar b{font-size:10px;color:#102b68}.compare-toolbar span{font-size:8px;color:#687485}.compare-toolbar button{border:1px solid #d5deea;background:#fff;border-radius:6px;padding:5px 9px;font-size:8px}.compare-selector{display:flex;gap:5px;flex-wrap:wrap;max-height:92px;overflow-y:auto;padding:5px;border:1px solid #e1e6ee;border-radius:8px;background:#fafbfd}.compare-legend{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:7px 3px;font-size:8.5px;font-weight:700;color:#445}.compare-legend span{display:flex;align-items:center;gap:4px}.compare-legend i{width:10px;height:10px;border-radius:50%;display:inline-block}.compare-legend .mini-flag{width:17px;height:11px}.compare-chart{min-height:340px}
+@media(max-width:900px){.world-kpis{grid-template-columns:1fr 1fr}.world-row{grid-template-columns:26px 150px 1fr 45px}.world-row small{display:none}}
+@media(max-width:650px){.world-toolbar{flex-direction:column;align-items:stretch}.world-search{min-width:0}.world-kpis{grid-template-columns:1fr}.world-row{grid-template-columns:24px 120px 1fr 38px;gap:5px;font-size:8px}}
+
+/* V17 */
+.level-descriptors{margin-top:8px;border:1px solid #dce4ef;border-radius:9px;background:#fff;overflow:hidden}
+.level-desc-head{display:flex;justify-content:space-between;gap:10px;padding:8px 10px;background:#f7f9fc;border-bottom:1px solid #e3e8f0}
+.level-desc-head b{font-size:10px;color:#102b68}.level-desc-head span{font-size:8px;color:#687486}
+.level-desc-row{display:grid;grid-template-columns:92px 1fr;gap:9px;padding:7px 10px;border-bottom:1px solid #edf1f5;align-items:start}
+.level-desc-row:last-child{border-bottom:0}.level-desc-row strong{font-size:9px;color:#1f334d}.level-desc-row p{margin:0;font-size:8.5px;line-height:1.38;color:#4e5b6c}
+.level-desc-row.baseline{background:#fff7dc;border-left:3px solid #f2b400}.level-desc-row.baseline strong{color:#7b5900}
+.intl-flag-strip{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 8px}
+.intl-flag-strip>span{display:flex;align-items:center;gap:4px;border:1px solid #d9e1eb;border-radius:999px;background:#fff;padding:4px 7px;font-size:8px}
+.intl-flag-strip small{color:#3c98a8;font-weight:900}.flag-emoji{display:inline-flex;width:20px;justify-content:center;font-size:14px;line-height:12px}
+.sample-warn{font-weight:900;color:#d97706;margin-left:1px}
+@media(max-width:800px){.level-desc-row{grid-template-columns:78px 1fr}.level-desc-head{flex-direction:column}}
+
+/* V19 — Niveles: una sola vista en laptop, gráfico preservado */
+#page-levels .page-head{margin-bottom:4px}
+#page-levels .page-head h1{margin:0 0 1px;font-size:25px;line-height:1.02}
+#page-levels .page-head p{margin:0;font-size:9px}
+#page-levels .levels-grid{gap:7px;align-items:stretch}
+#page-levels .card{padding:8px 10px}
+#page-levels .levels-left,
+#page-levels .levels-middle{gap:7px}
+#page-levels .range-card{min-height:0}
+#page-levels .range-card h3,
+#page-levels .meaning-card h3,
+#page-levels .baseline-card h3{margin:0 0 5px}
+#page-levels .range-table td{padding:4px 5px;line-height:1.05}
+#page-levels .meaning-card{min-height:0}
+#page-levels .meaning-card p{margin:4px 0;line-height:1.32}
+#page-levels .baseline-card{min-height:0;padding-top:8px;padding-bottom:8px}
+#page-levels .baseline-card .big-number{margin:2px 0;font-size:38px;line-height:1}
+#page-levels .level-descriptors{margin-top:6px}
+#page-levels .level-desc-head{padding:5px 8px}
+#page-levels .level-desc-row{grid-template-columns:82px 1fr;gap:7px;padding:4px 8px}
+#page-levels .level-desc-row strong{font-size:8.5px}
+#page-levels .level-desc-row p{font-size:7.7px;line-height:1.20}
+#page-levels .note{margin-top:6px;padding:7px 9px;line-height:1.2}
+#page-levels .chart-card{min-height:0}
+#page-levels .chart-card .chart-wrap,
+#page-levels .chart-card canvas{min-height:350px !important}
+@media (min-width:1100px) and (min-height:650px){
+  #page-levels{padding-top:4px;padding-bottom:4px}
+  #page-levels .levels-grid{
+    grid-template-columns:28% 18% 54%;
+    min-height:0;
+  }
+  #page-levels .chart-card{height:430px}
+  #page-levels .level-descriptors{max-height:278px;overflow:auto}
+}
+@media (min-width:1100px) and (max-height:800px){
+  #page-levels .chart-card{height:405px}
+  #page-levels .chart-card .chart-wrap,
+  #page-levels .chart-card canvas{min-height:330px !important}
+  #page-levels .level-descriptors{max-height:250px}
+}
+
+/* =========================================================
+   V21 — Corrección real de NIVELES (selectores existentes)
+   Mantiene grande el gráfico y evita que los descriptores
+   empujen la página fuera de la pantalla en laptop.
+   ========================================================= */
+@media (min-width:1100px) and (min-height:680px){
+  #niveles.active{
+    overflow:hidden !important;
+    padding-top:4px !important;
+    padding-bottom:4px !important;
+  }
+  #niveles .analysis-head{
+    margin-bottom:5px !important;
+    min-height:54px !important;
+  }
+  #niveles .analysis-head h1{
+    margin:1px 0 1px !important;
+    line-height:1 !important;
+  }
+  #niveles .analysis-head p{margin:0 !important}
+  #niveles .levels-layout{
+    grid-template-columns:minmax(0,46%) minmax(0,54%) !important;
+    gap:8px !important;
+    align-items:stretch !important;
+    height:calc(100vh - 198px) !important;
+    max-height:535px !important;
+    min-height:470px !important;
+    margin-top:0 !important;
+  }
+  #niveles .levels-info{
+    display:grid !important;
+    grid-template-rows:auto minmax(0,1fr) auto !important;
+    gap:6px !important;
+    min-height:0 !important;
+    overflow:hidden !important;
+  }
+  #niveles .level-grid{
+    grid-template-columns:minmax(0,60%) minmax(0,40%) !important;
+    grid-template-rows:auto auto !important;
+    gap:6px !important;
+    align-items:stretch !important;
+  }
+  #niveles .levelbox{
+    height:auto !important;
+    min-height:0 !important;
+    padding:7px 9px !important;
+  }
+  #niveles .levelbox:first-child{
+    grid-row:1 / 3 !important;
+  }
+  #niveles .levelbox h3{
+    margin:0 0 4px !important;
+    font-size:12px !important;
+  }
+  #niveles .range{
+    padding:3px 5px !important;
+    font-size:9.5px !important;
+    line-height:1.05 !important;
+  }
+  #niveles .levelbox:nth-child(2),
+  #niveles .levelbox:nth-child(3){
+    padding:8px 10px !important;
+  }
+  #niveles .levelbox:nth-child(2) p,
+  #niveles .levelbox:nth-child(3) p{
+    margin:4px 0 !important;
+    font-size:9.2px !important;
+    line-height:1.30 !important;
+  }
+  #niveles .levelbox:nth-child(3) > div[style*="font-size"]{
+    font-size:31px !important;
+    line-height:1 !important;
+    margin:4px 0 !important;
+  }
+  #niveles .level-descriptors{
+    min-height:0 !important;
+    max-height:none !important;
+    overflow:auto !important;
+    margin:0 !important;
+    border-radius:8px !important;
+  }
+  #niveles .level-desc-head{
+    position:sticky;
+    top:0;
+    z-index:2;
+    padding:4px 7px !important;
+  }
+  #niveles .level-desc-row{
+    grid-template-columns:82px 1fr !important;
+    gap:6px !important;
+    padding:3px 7px !important;
+  }
+  #niveles .level-desc-row strong{font-size:8px !important}
+  #niveles .level-desc-row p{
+    font-size:7.5px !important;
+    line-height:1.16 !important;
+  }
+  #niveles .note{
+    margin:0 !important;
+    padding:6px 9px !important;
+    font-size:9px !important;
+    line-height:1.18 !important;
+  }
+  #niveles .levels-chart-panel{
+    height:100% !important;
+    min-height:0 !important;
+    padding:8px 10px !important;
+  }
+  #niveles #levelsChart{
+    height:calc(100% - 24px) !important;
+    min-height:410px !important;
+    max-height:none !important;
+    margin:0 !important;
+  }
+  #niveles .section-minihead{
+    padding-bottom:4px !important;
+  }
+}
+
+/* Panorama mundial histórico */
+.world-toolbar{
+  align-items:end !important;
+}
+.world-toolbar > label:first-child{
+  min-width:105px;
+}
+
+/* =========================================================
+   V22 — NIVELES REDISEÑADO
+   Objetivo: una sola pantalla de laptop, sin tabla larga debajo
+   y sin reducir el gráfico principal.
+   ========================================================= */
+
+#niveles .levels-layout{
+  display:grid !important;
+  grid-template-columns:minmax(500px,46%) minmax(560px,54%) !important;
+  gap:10px !important;
+  align-items:stretch !important;
+  height:auto !important;
+  min-height:0 !important;
+  max-height:none !important;
+  overflow:visible !important;
+}
+
+#niveles .levels-info{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:7px !important;
+  overflow:visible !important;
+  min-height:0 !important;
+}
+
+#niveles .level-grid{
+  display:grid !important;
+  grid-template-columns:minmax(0,59%) minmax(0,41%) !important;
+  grid-template-rows:none !important;
+  gap:8px !important;
+  min-height:0 !important;
+  align-items:stretch !important;
+}
+
+#niveles .ranges-card{
+  grid-row:auto !important;
+  grid-column:auto !important;
+  min-height:0 !important;
+  height:100% !important;
+  padding:9px 10px !important;
+}
+
+#niveles .levels-side-stack{
+  display:grid;
+  grid-template-rows:minmax(0,1fr) auto;
+  gap:8px;
+  min-height:0;
+}
+
+#niveles .meaning-card,
+#niveles .baseline-card{
+  min-height:0 !important;
+  height:auto !important;
+  padding:10px 12px !important;
+}
+
+#niveles .levels-box-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  margin-bottom:7px;
+}
+
+#niveles .levels-box-head h3{
+  margin:0 !important;
+  font-size:13px !important;
+  color:var(--navy);
+}
+
+#niveles .levels-box-head span{
+  font-size:8.5px;
+  color:#7a8798;
+  white-space:nowrap;
+}
+
+#niveles .ranges-list{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+
+#niveles .range.level-select{
+  width:100%;
+  display:grid;
+  grid-template-columns:minmax(100px,1fr) auto;
+  align-items:center;
+  border:0;
+  border-radius:6px;
+  background:#fff;
+  padding:5px 7px !important;
+  min-height:29px;
+  cursor:pointer;
+  text-align:left;
+  color:inherit;
+  font:inherit;
+  transition:.15s ease;
+}
+
+#niveles .range.level-select:hover{
+  background:#f4f7fb;
+}
+
+#niveles .range.level-select.active{
+  background:#fff2c9 !important;
+  box-shadow:inset 3px 0 0 #f0b400;
+}
+
+#niveles .range.level-select b{
+  font-size:10px;
+  color:#0d2248;
+}
+
+#niveles .range.level-select span{
+  font-size:9.5px;
+  color:#111827;
+  font-weight:600;
+}
+
+#niveles .meaning-level-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:74px;
+  height:25px;
+  padding:0 9px;
+  border-radius:999px;
+  background:#eef5fb;
+  color:#1e6080;
+  font-weight:900;
+  font-size:10px;
+  margin-bottom:7px;
+}
+
+#niveles .meaning-card p{
+  margin:0 !important;
+  font-size:10px !important;
+  line-height:1.42 !important;
+  color:#24364e;
+}
+
+#niveles .baseline-inline{
+  display:none;
+  margin-top:8px;
+  padding:6px 8px;
+  border-radius:7px;
+  background:#fff6dc;
+  border-left:3px solid #f0b400;
+  font-size:9px;
+  line-height:1.25;
+}
+
+#niveles .baseline-inline.show{display:block}
+
+#niveles .baseline-card{
+  background:linear-gradient(180deg,#ffffff 0%,#fbfdff 100%);
+}
+
+#niveles .baseline-value{
+  font-size:40px;
+  line-height:.95;
+  font-weight:900;
+  color:#3f9bae;
+  letter-spacing:-1.5px;
+  margin:3px 0 4px;
+}
+
+#niveles .baseline-value small{
+  font-size:18px;
+  margin-left:2px;
+}
+
+#niveles .baseline-card p{
+  margin:0 0 4px !important;
+  font-size:9.5px !important;
+  line-height:1.25 !important;
+}
+
+#niveles .baseline-sub{
+  font-size:8.8px;
+  color:#586579;
+}
+
+#niveles .levels-method-note{
+  margin:0 !important;
+  padding:6px 9px !important;
+  font-size:8.8px !important;
+  line-height:1.25 !important;
+  border-radius:8px !important;
+}
+
+#niveles .levels-chart-panel{
+  height:100% !important;
+  min-height:438px !important;
+  padding:9px 11px !important;
+}
+
+#niveles #levelsChart{
+  height:392px !important;
+  min-height:392px !important;
+  max-height:none !important;
+  margin:0 !important;
+}
+
+#niveles .analysis-head{
+  margin-bottom:6px !important;
+  min-height:auto !important;
+}
+
+#niveles .analysis-head h1{
+  margin:1px 0 1px !important;
+  line-height:1.02 !important;
+}
+
+#niveles .analysis-head p{
+  margin:0 !important;
+}
+
+/* Neutraliza el viejo bloque V17/V21 si quedara alguna referencia */
+#niveles .level-descriptors{display:none !important}
+
+/* Laptop 1366x768 / 1440x900 */
+@media (min-width:1100px) and (max-height:820px){
+  #niveles.active{
+    overflow:hidden !important;
+  }
+  #niveles .levels-layout{
+    grid-template-columns:minmax(475px,46%) minmax(545px,54%) !important;
+  }
+  #niveles .ranges-card,
+  #niveles .meaning-card,
+  #niveles .baseline-card{
+    padding:7px 9px !important;
+  }
+  #niveles .range.level-select{
+    min-height:26px;
+    padding:4px 6px !important;
+  }
+  #niveles .meaning-card p{font-size:9.2px !important;line-height:1.33 !important}
+  #niveles .baseline-value{font-size:35px}
+  #niveles .levels-chart-panel{min-height:418px !important}
+  #niveles #levelsChart{
+    height:374px !important;
+    min-height:374px !important;
+  }
+}
+
+/* Tablet y móvil: apila sin forzar altura */
+@media (max-width:1099px){
+  #niveles.active{overflow:visible !important}
+  #niveles .levels-layout{
+    grid-template-columns:1fr !important;
+  }
+  #niveles .level-grid{
+    grid-template-columns:1fr !important;
+  }
+  #niveles .levels-side-stack{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:none;
+  }
+  #niveles .levels-chart-panel{min-height:420px !important}
+  #niveles #levelsChart{height:370px !important;min-height:370px !important}
+}
+
+@media (max-width:700px){
+  #niveles .levels-side-stack{grid-template-columns:1fr}
+}
+
+/* V23 — salvaguardas visuales del módulo Niveles */
+#niveles #levelGrid{display:grid !important;visibility:visible !important;opacity:1 !important}
+#niveles #levelsChart{display:block !important;visibility:visible !important;opacity:1 !important}
+#niveles .levels-info{min-width:0 !important}
+#niveles .levels-chart-panel{min-width:0 !important}
+
+
+/* ============================================================
+   V25 — Corrección de leyendas y fuentes en Ampliada/Completa
+   ============================================================ */
+
+/* El panel del gráfico debe reservar espacio inferior real. */
+#resumen .chart-card,
+#resumen .chart-panel,
+#resumen .trend-card,
+#resumen .chart-wrap,
+#resumen .chart-container {
+  overflow: visible !important;
+}
+
+/* Evita que leyendas y notas queden montadas unas sobre otras. */
+#resumen .legend,
+#resumen .chart-legend,
+#resumen [class*="legend"] {
+  position: relative !important;
+  inset: auto !important;
+  transform: none !important;
+  clear: both !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  column-gap: 16px !important;
+  row-gap: 6px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-height: 24px !important;
+  margin: 8px auto 0 !important;
+  padding: 2px 12px 0 !important;
+  box-sizing: border-box !important;
+  line-height: 1.25 !important;
+  white-space: normal !important;
+}
+
+/* La fuente siempre ocupa su propia línea debajo de la leyenda. */
+#resumen .source,
+#resumen .source-note,
+#resumen .chart-source,
+#resumen .fuente,
+#resumen [class*="source"] {
+  position: relative !important;
+  inset: auto !important;
+  transform: none !important;
+  display: block !important;
+  clear: both !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 7px 0 0 !important;
+  padding: 5px 10px 2px !important;
+  box-sizing: border-box !important;
+  line-height: 1.35 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+}
+
+/* Modos de visualización grandes: más separación sin achicar el gráfico. */
+body.view-expanded #resumen .chart-card,
+body.view-expanded #resumen .chart-panel,
+body.view-wide #resumen .chart-card,
+body.view-wide #resumen .chart-panel,
+body.view-full #resumen .chart-card,
+body.view-full #resumen .chart-panel,
+body[class*="ampli"] #resumen .chart-card,
+body[class*="complet"] #resumen .chart-card {
+  padding-bottom: 14px !important;
+}
+
+body.view-expanded #resumen .legend,
+body.view-wide #resumen .legend,
+body.view-full #resumen .legend,
+body[class*="ampli"] #resumen .legend,
+body[class*="complet"] #resumen .legend,
+body.view-expanded #resumen .chart-legend,
+body.view-wide #resumen .chart-legend,
+body.view-full #resumen .chart-legend {
+  margin-top: 10px !important;
+  padding-top: 3px !important;
+}
+
+/* En pantallas anchas, la leyenda puede envolver pero nunca superponerse. */
+@media (min-width: 1100px) {
+  #resumen .legend,
+  #resumen .chart-legend,
+  #resumen [class*="legend"] {
+    font-size: 10px !important;
+  }
+  #resumen .source,
+  #resumen .source-note,
+  #resumen .chart-source,
+  #resumen .fuente,
+  #resumen [class*="source"] {
+    font-size: 9px !important;
+  }
+}
+
+/* En laptop de poca altura se conserva el gráfico y se compacta solo texto auxiliar. */
+@media (min-width: 1100px) and (max-height: 820px) {
+  #resumen .legend,
+  #resumen .chart-legend,
+  #resumen [class*="legend"] {
+    row-gap: 3px !important;
+    margin-top: 6px !important;
+    font-size: 9px !important;
+  }
+  #resumen .source,
+  #resumen .source-note,
+  #resumen .chart-source,
+  #resumen .fuente,
+  #resumen [class*="source"] {
+    margin-top: 4px !important;
+    padding-top: 3px !important;
+    font-size: 8.5px !important;
+  }
+}
+
+#resumen svg { overflow: visible !important; }
+#resumen svg text { dominant-baseline: auto; }
+
+/* ============================================================
+   V26 — RESUMEN: PANTALLA COMPLETA / AMPLIADA SIN SUPERPOSICIÓN
+   La causa era estructural: .summary tenía 3 filas declaradas,
+   pero ahora contiene 4 bloques: summary-main, cards,
+   exec-gap-panel y sourcebar.
+   ============================================================ */
+
+#resumen.summary{
+  height:auto !important;
+  min-height:0 !important;
+  grid-template-rows:auto auto auto auto !important;
+  gap:10px !important;
+  overflow:visible !important;
+}
+
+#resumen.summary.active{
+  display:grid !important;
+}
+
+/* Primera fila: gráfico + lectura ejecutiva */
+#resumen .summary-main{
+  min-height:455px !important;
+  height:auto !important;
+  align-items:stretch !important;
+}
+
+/* El gráfico mantiene presencia; no se reduce para crear espacio */
+#resumen .chart-panel{
+  min-height:455px !important;
+  height:auto !important;
+  overflow:hidden !important;
+  padding-bottom:8px !important;
+}
+
+#resumen .chart-area{
+  min-height:330px !important;
+  height:330px !important;
+  flex:none !important;
+  transform:none !important;
+}
+
+/* Leyenda SIEMPRE dentro del panel y debajo del gráfico */
+#resumen .chart-panel > .legend{
+  position:static !important;
+  order:10 !important;
+  flex:0 0 auto !important;
+  width:100% !important;
+  margin:5px 0 0 !important;
+  padding:5px 8px 1px !important;
+  min-height:28px !important;
+  display:flex !important;
+  flex-wrap:wrap !important;
+  justify-content:center !important;
+  align-items:center !important;
+  gap:5px 13px !important;
+  background:#fff !important;
+  z-index:auto !important;
+}
+
+/* Las tarjetas empiezan después del panel, nunca debajo de la leyenda */
+#resumen .cards{
+  position:relative !important;
+  z-index:auto !important;
+  margin:0 !important;
+  min-height:0 !important;
+  align-items:stretch !important;
+}
+
+#resumen .cards .metric{
+  min-height:118px !important;
+}
+
+/* Brechas ejecutivas en su propia fila */
+#resumen .exec-gap-panel{
+  position:relative !important;
+  clear:both !important;
+  margin:0 !important;
+  z-index:auto !important;
+}
+
+/* Fuente en una cuarta fila real. Nunca encima del contenido. */
+#resumen > .sourcebar{
+  position:static !important;
+  display:grid !important;
+  clear:both !important;
+  width:100% !important;
+  margin:0 !important;
+  padding:7px 10px 4px !important;
+  border-top:1px solid #e4e9f1 !important;
+  background:#fff !important;
+  z-index:auto !important;
+  min-height:28px !important;
+  line-height:1.35 !important;
+}
+
+/* Modo Ampliada: agranda el área útil, pero mantiene el flujo */
+body.view-expanded #resumen .summary-main{
+  min-height:500px !important;
+}
+
+body.view-expanded #resumen .chart-panel{
+  min-height:500px !important;
+}
+
+body.view-expanded #resumen .chart-area{
+  height:375px !important;
+  min-height:375px !important;
+}
+
+/* Pantalla completa del navegador */
+html:fullscreen,
+html:-webkit-full-screen{
+  background:#fff !important;
+  overflow:auto !important;
+}
+
+html:fullscreen body,
+html:-webkit-full-screen body{
+  min-height:100vh !important;
+  overflow:auto !important;
+  background:#fff !important;
+}
+
+html:fullscreen main,
+html:-webkit-full-screen main{
+  max-width:1600px !important;
+  width:100% !important;
+  margin:0 auto !important;
+}
+
+html:fullscreen #resumen.summary,
+html:-webkit-full-screen #resumen.summary{
+  height:auto !important;
+  min-height:calc(100vh - 92px) !important;
+  grid-template-rows:auto auto auto auto !important;
+  overflow:visible !important;
+}
+
+html:fullscreen #resumen .summary-main,
+html:-webkit-full-screen #resumen .summary-main{
+  min-height:500px !important;
+}
+
+html:fullscreen #resumen .chart-area,
+html:-webkit-full-screen #resumen .chart-area{
+  height:385px !important;
+  min-height:385px !important;
+}
+
+html:fullscreen #resumen .chart-panel > .legend,
+html:-webkit-full-screen #resumen .chart-panel > .legend{
+  margin-top:6px !important;
+  padding-top:6px !important;
+}
+
+/* Laptop 1366x768: conserva el gráfico y evita crecer innecesariamente */
+@media (min-width:1100px) and (max-height:820px){
+  #resumen .summary-main{
+    min-height:420px !important;
+  }
+  #resumen .chart-panel{
+    min-height:420px !important;
+  }
+  #resumen .chart-area{
+    height:300px !important;
+    min-height:300px !important;
+  }
+  body.view-expanded #resumen .summary-main,
+  html:fullscreen #resumen .summary-main{
+    min-height:450px !important;
+  }
+  body.view-expanded #resumen .chart-area,
+  html:fullscreen #resumen .chart-area{
+    height:325px !important;
+    min-height:325px !important;
+  }
+  #resumen .chart-panel > .legend{
+    font-size:9px !important;
+    gap:4px 10px !important;
+  }
+  #resumen > .sourcebar{
+    font-size:8px !important;
+  }
+}
+
+/* ============================================================
+   V27 — Eje X del Resumen: años siempre visibles
+   ============================================================ */
+#resumen #summaryChart{
+  overflow:visible !important;
+  padding-bottom:0 !important;
+}
+
+#resumen #summaryChart > svg{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  overflow:visible !important;
+}
+
+/* No usar overflow:hidden en el área que contiene el SVG:
+   el recorte se hace en el panel exterior, no en el eje X. */
+#resumen .chart-area{
+  overflow:visible !important;
+}
+
+/* Conservamos espacio suficiente para gráfico + años + título */
+#resumen .chart-panel{
+  overflow:visible !important;
+}
+
+/* Normal */
+body.view-normal #resumen .chart-area,
+body.view-auto.view-normal #resumen .chart-area{
+  min-height:345px !important;
+  height:345px !important;
+}
+
+/* Ampliada */
+body.view-expanded #resumen .chart-area{
+  min-height:390px !important;
+  height:390px !important;
+}
+
+/* Pantalla completa */
+html:fullscreen #resumen .chart-area,
+html:-webkit-full-screen #resumen .chart-area{
+  min-height:400px !important;
+  height:400px !important;
+}
+
+/* Laptop 1366x768: no ocultar años aunque la altura sea menor */
+@media (min-width:1100px) and (max-height:820px){
+  #resumen .chart-area{
+    min-height:325px !important;
+    height:325px !important;
+  }
+  body.view-expanded #resumen .chart-area,
+  html:fullscreen #resumen .chart-area,
+  html:-webkit-full-screen #resumen .chart-area{
+    min-height:350px !important;
+    height:350px !important;
+  }
+}
+
+/* ============================================================
+   V28 — Resumen: gráfico más alto y espacio blanco eliminado
+   ============================================================ */
+
+/* El panel conserva la misma altura general, pero el gráfico ocupa más de ella. */
+#resumen .chart-panel{
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:flex-start !important;
+  min-height:0 !important;
+  height:100% !important;
+  padding-bottom:8px !important;
+}
+
+/* Antes quedaba demasiado espacio entre el gráfico y la leyenda.
+   Ahora el SVG aprovecha esa zona manteniendo intacto el eje X. */
+#resumen .chart-area{
+  flex:1 1 auto !important;
+  height:auto !important;
+  min-height:395px !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+/* La leyenda queda inmediatamente debajo del SVG */
+#resumen .chart-panel > .legend{
+  flex:0 0 auto !important;
+  margin:2px 0 0 !important;
+  padding:3px 8px 1px !important;
+  min-height:24px !important;
+}
+
+/* Ajuste específico modo Normal */
+body.view-normal #resumen .summary-main,
+body.view-auto.view-normal #resumen .summary-main{
+  min-height:500px !important;
+}
+
+body.view-normal #resumen .chart-panel,
+body.view-auto.view-normal #resumen .chart-panel{
+  min-height:500px !important;
+}
+
+body.view-normal #resumen .chart-area,
+body.view-auto.view-normal #resumen .chart-area{
+  min-height:410px !important;
+  height:auto !important;
+}
+
+/* Modo Ampliada */
+body.view-expanded #resumen .summary-main{
+  min-height:555px !important;
+}
+body.view-expanded #resumen .chart-panel{
+  min-height:555px !important;
+}
+body.view-expanded #resumen .chart-area{
+  min-height:460px !important;
+  height:auto !important;
+}
+
+/* Pantalla completa */
+html:fullscreen #resumen .summary-main,
+html:-webkit-full-screen #resumen .summary-main{
+  min-height:565px !important;
+}
+html:fullscreen #resumen .chart-panel,
+html:-webkit-full-screen #resumen .chart-panel{
+  min-height:565px !important;
+}
+html:fullscreen #resumen .chart-area,
+html:-webkit-full-screen #resumen .chart-area{
+  min-height:470px !important;
+  height:auto !important;
+}
+
+/* Laptop 1366x768: usar casi todo el alto disponible sin cortar años/leyenda */
+@media (min-width:1100px) and (max-height:820px){
+  #resumen .summary-main{
+    min-height:470px !important;
+  }
+  #resumen .chart-panel{
+    min-height:470px !important;
+  }
+  #resumen .chart-area{
+    min-height:380px !important;
+    height:auto !important;
+  }
+
+  body.view-expanded #resumen .summary-main,
+  html:fullscreen #resumen .summary-main,
+  html:-webkit-full-screen #resumen .summary-main{
+    min-height:505px !important;
+  }
+
+  body.view-expanded #resumen .chart-panel,
+  html:fullscreen #resumen .chart-panel,
+  html:-webkit-full-screen #resumen .chart-panel{
+    min-height:505px !important;
+  }
+
+  body.view-expanded #resumen .chart-area,
+  html:fullscreen #resumen .chart-area,
+  html:-webkit-full-screen #resumen .chart-area{
+    min-height:410px !important;
+  }
+}
+
+/* Quitar cualquier margen residual que genere "franja blanca" al final del panel */
+#resumen .chart-panel > *:last-child{
+  margin-bottom:0 !important;
+}
+
+/* ============================================================
+   V29 — Pulido institucional de la barra de Vista
+   Azul DRELM como jerarquía; colores analíticos se conservan.
+   ============================================================ */
+.view-control{
+  display:flex !important;
+  align-items:center !important;
+  gap:3px !important;
+  padding:3px !important;
+  border:1px solid #d9e1ee !important;
+  border-radius:10px !important;
+  background:#f8fafc !important;
+  box-shadow:0 1px 2px rgba(25,45,92,.04) !important;
+  white-space:nowrap !important;
+}
+.view-control .view-label{
+  padding:0 7px !important;
+  font-size:9.5px !important;
+  font-weight:800 !important;
+  color:#667085 !important;
+  letter-spacing:.01em !important;
+}
+.view-control button{
+  min-height:26px !important;
+  border:1px solid transparent !important;
+  background:transparent !important;
+  color:#536174 !important;
+  font-size:9.5px !important;
+  font-weight:750 !important;
+  padding:4px 8px !important;
+  border-radius:7px !important;
+  cursor:pointer !important;
+  transition:background .15s ease,color .15s ease,border-color .15s ease,box-shadow .15s ease !important;
+}
+.view-control button:hover:not(.active){
+  background:#eef3f9 !important;
+  border-color:#e0e7f0 !important;
+  color:#20306f !important;
+}
+.view-control button.active{
+  background:#20306f !important;
+  border-color:#20306f !important;
+  color:#fff !important;
+  box-shadow:0 1px 3px rgba(32,48,111,.20) !important;
+}
+.view-control button[data-view="auto"]{
+  font-weight:800 !important;
+}
+.view-control button[data-view="auto"] small{
+  font-size:8px !important;
+  font-weight:700 !important;
+  opacity:.82 !important;
+}
+.view-control .view-separator{
+  width:1px !important;
+  height:17px !important;
+  margin:0 2px !important;
+  background:#d8e0eb !important;
+}
+.view-control .fullscreen-btn{
+  width:29px !important;
+  min-width:29px !important;
+  padding:3px !important;
+  font-size:14px !important;
+  line-height:1 !important;
+}
+.view-control .fullscreen-btn:hover{
+  background:#eaf0f8 !important;
+  color:#20306f !important;
+}
+
+/* En pantallas estrechas mantenemos controles utilizables sin afectar la navegación */
+@media(max-width:1180px){
+  .view-control .view-label{display:none !important}
+  .view-control button{padding:4px 6px !important;font-size:9px !important}
+  .view-control button[data-view="auto"] small{display:none !important}
+}
+@media(max-width:760px){
+  .view-control button[data-view="compact"],
+  .view-control button[data-view="normal"],
+  .view-control button[data-view="expanded"]{display:none !important}
+  .view-control button[data-view="auto"] small{display:inline !important}
+}
+
+/* ============================================================
+   V30 — Pulido visual institucional con enfoque educativo
+   ============================================================ */
+
+:root{
+  --edu-navy:#20306F;
+  --edu-blue:#2F6FED;
+  --edu-blue-soft:#EAF2FF;
+  --edu-teal:#3E98A8;
+  --edu-orange:#F5A11A;
+  --edu-green:#2E8B74;
+  --edu-red:#D92D20;
+  --edu-bg:#F5F7FA;
+  --edu-panel:#FFFFFF;
+  --edu-border:#DCE3EC;
+  --edu-text:#243044;
+  --edu-muted:#667085;
+}
+
+/* Fondo general y superficies */
+html,body{
+  background:var(--edu-bg) !important;
+  color:var(--edu-text) !important;
+}
+main,.main,.app-main{
+  background:transparent !important;
+}
+.panel,.card,.section-card,.chart-panel,.info-card,.exec-card,.sourcebar,
+.summary-main,.exec-gap-panel{
+  border-color:var(--edu-border) !important;
+}
+
+/* Cabecera: más institucional y limpia */
+header,.topbar,.header{
+  background:#fff !important;
+}
+.brand-title,
+header h1,
+.topbar h1{
+  color:var(--edu-navy) !important;
+  letter-spacing:-.01em !important;
+}
+nav button.active,
+.tabs button.active,
+.topnav button.active{
+  background:var(--edu-blue-soft) !important;
+  color:var(--edu-navy) !important;
+  border-color:#D6E3FF !important;
+  font-weight:800 !important;
+}
+
+/* Títulos de módulos */
+h1,h2,h3,
+.section-title,
+.card-title,
+.panel-title{
+  color:var(--edu-navy);
+}
+
+/* Tarjetas informativas: evitar crema cuando no hay alerta */
+#resumen .summary-side .card,
+#resumen .summary-side .info-card,
+#resumen .summary-side > *{
+  background:#fff !important;
+}
+
+/* Lectura ejecutiva: fondo educativo azul suave */
+#resumen .summary-side > *:first-child{
+  background:linear-gradient(180deg,#F6F9FF 0%,#EEF4FF 100%) !important;
+  border-color:#D5E3FA !important;
+}
+
+/* Brecha: neutra, con rojo solo en el valor negativo */
+#resumen .summary-side > *:nth-child(2){
+  background:#FBFCFE !important;
+  border-color:#DDE4ED !important;
+}
+
+/* Línea base: deja de parecer advertencia */
+#resumen .summary-side > *:nth-child(3){
+  background:linear-gradient(180deg,#F8FBFF 0%,#F1F6FB 100%) !important;
+  border-color:#D9E5F0 !important;
+}
+
+/* Números relevantes con mayor jerarquía */
+.kpi-value,
+.metric-value,
+.big-number,
+.value-strong,
+.summary-side strong{
+  font-weight:800 !important;
+}
+
+/* Semántica cromática */
+.positive,.good,.up{
+  color:var(--edu-green) !important;
+}
+.negative,.bad,.down,.gap-negative{
+  color:var(--edu-red) !important;
+}
+.warning{
+  color:#B7791F !important;
+}
+
+/* Botones y controles */
+button.active,
+.btn-primary,
+.control-group button.active,
+.segmented button.active{
+  background:var(--edu-navy) !important;
+  color:#fff !important;
+}
+button:hover{
+  transition:background .15s ease,color .15s ease,border-color .15s ease,box-shadow .15s ease !important;
+}
+
+/* Filtros más uniformes */
+select,input[type="text"],input[type="search"]{
+  background:#fff !important;
+  border-color:var(--edu-border) !important;
+  color:var(--edu-text) !important;
+}
+
+/* Tablas */
+table{
+  background:#fff !important;
+}
+thead th{
+  background:#F3F6FA !important;
+  color:var(--edu-navy) !important;
+  border-color:var(--edu-border) !important;
+}
+tbody td{
+  border-color:#E7ECF2 !important;
+}
+tbody tr:hover{
+  background:#F8FAFD !important;
+}
+
+/* Fuente y notas metodológicas */
+.sourcebar,
+.source-note,
+.note,
+.method-note{
+  color:var(--edu-muted) !important;
+  background:transparent !important;
+}
+
+/* Tarjetas inferiores del Resumen: misma base visual */
+#resumen > .cards .card,
+#resumen .cards > *{
+  background:#fff !important;
+  border-color:var(--edu-border) !important;
+  box-shadow:0 1px 2px rgba(32,48,111,.04) !important;
+}
+
+/* Iconos/acentos educativos sin introducir otro color dominante */
+#resumen .cards > *:nth-child(1){
+  border-top:3px solid var(--edu-blue) !important;
+}
+#resumen .cards > *:nth-child(2){
+  border-top:3px solid var(--edu-orange) !important;
+}
+#resumen .cards > *:nth-child(3){
+  border-top:3px solid var(--edu-teal) !important;
+}
+
+/* Mantener colores analíticos de las tres competencias */
+.legend .math,.legend .matematica{color:var(--edu-navy) !important}
+.legend .reading,.legend .lectura{color:var(--edu-orange) !important}
+.legend .science,.legend .ciencia{color:var(--edu-teal) !important}
+
+/* Separadores y bordes suaves */
+hr{
+  border-color:#E5EAF1 !important;
+}
+
+/* Más aire en escritorio sin agrandar demasiado */
+@media(min-width:1100px){
+  .panel,.card,.section-card{
+    border-radius:12px !important;
+  }
+}
+
+/* Responsive: contraste y lectura en móvil */
+@media(max-width:760px){
+  body{
+    background:#fff !important;
+  }
+  .panel,.card,.section-card,.chart-panel{
+    border-radius:10px !important;
+  }
+  h1,h2,h3{
+    line-height:1.18 !important;
+  }
+}
+
+/* ============================================================
+   V31 — Un solo botón de Visualización con menú desplegable
+   ============================================================ */
+.view-menu{position:relative!important;margin-left:auto!important;z-index:150!important}
+.view-menu-btn{
+ display:flex!important;align-items:center!important;gap:6px!important;
+ min-height:29px!important;padding:5px 10px!important;border:1px solid #d9e1ee!important;
+ border-radius:9px!important;background:#fff!important;color:#20306f!important;
+ font-size:10px!important;font-weight:800!important;cursor:pointer!important;
+ box-shadow:0 1px 2px rgba(32,48,111,.05)!important
+}
+.view-menu-btn:hover,.view-menu-btn[aria-expanded="true"]{background:#f3f6fb!important;border-color:#cbd7e8!important}
+.view-menu-icon{font-size:12px!important}.view-menu-caret{font-size:10px!important;color:#667085!important}
+.view-menu-panel{
+ display:none;position:absolute!important;right:0!important;top:calc(100% + 6px)!important;
+ width:190px!important;padding:6px!important;background:#fff!important;border:1px solid #dce3ec!important;
+ border-radius:10px!important;box-shadow:0 12px 30px rgba(31,48,91,.18)!important;z-index:9999!important
+}
+.view-menu-panel.open{display:block!important}
+.view-menu-panel button{
+ width:100%!important;display:flex!important;align-items:center!important;justify-content:space-between!important;
+ min-height:32px!important;padding:6px 9px!important;border:0!important;border-radius:7px!important;
+ background:#fff!important;color:#344054!important;font-size:10px!important;font-weight:650!important;
+ text-align:left!important;cursor:pointer!important
+}
+.view-menu-panel button:hover{background:#f2f6fc!important;color:#20306f!important}
+.view-menu-panel button.active{background:#eaf2ff!important;color:#20306f!important;font-weight:800!important}
+.view-check{visibility:hidden;color:#20306f!important;font-size:12px!important}
+.view-menu-panel button.active .view-check{visibility:visible}
+.view-menu-panel small{font-size:8px!important;color:#667085!important;font-weight:650!important}
+.view-menu-divider{height:1px!important;margin:5px 3px!important;background:#e7ebf1!important}
+.fullscreen-menu-item{color:#20306f!important;font-weight:750!important}
+@media(max-width:760px){
+ .view-menu-btn{padding:5px 8px!important}
+ .view-menu-btn>span:nth-child(2){display:none!important}
+ .view-menu-panel{width:180px!important}
+}

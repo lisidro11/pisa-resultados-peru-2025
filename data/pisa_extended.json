@@ -1,0 +1,497 @@
+{
+  "years": [
+    2009,
+    2012,
+    2015,
+    2018,
+    2022,
+    2025
+  ],
+  "strataTrend": {
+    "Matemática": {
+      "Nacional": {
+        "Perú": [
+          365,
+          368,
+          387,
+          400,
+          391,
+          382
+        ]
+      },
+      "Sexo": {
+        "Hombre": [
+          374,
+          378,
+          391,
+          408,
+          399,
+          389
+        ],
+        "Mujer": [
+          356,
+          359,
+          382,
+          392,
+          384,
+          376
+        ]
+      },
+      "Gestión": {
+        "Privada": [
+          428,
+          422,
+          428,
+          450,
+          437,
+          425
+        ],
+        "Pública": [
+          345,
+          350,
+          372,
+          383,
+          375,
+          366
+        ]
+      },
+      "Área": {
+        "Urbana": [
+          377,
+          376,
+          393,
+          407,
+          401,
+          392
+        ],
+        "Rural": [
+          291,
+          302,
+          327,
+          334,
+          345,
+          343
+        ]
+      }
+    },
+    "Lectura": {
+      "Nacional": {
+        "Perú": [
+          370,
+          384,
+          398,
+          401,
+          408,
+          390
+        ]
+      },
+      "Sexo": {
+        "Hombre": [
+          359,
+          373,
+          394,
+          395,
+          404,
+          382
+        ],
+        "Mujer": [
+          381,
+          395,
+          401,
+          406,
+          412,
+          399
+        ]
+      },
+      "Gestión": {
+        "Privada": [
+          435,
+          436,
+          447,
+          457,
+          457,
+          435
+        ],
+        "Pública": [
+          348,
+          367,
+          380,
+          381,
+          391,
+          373
+        ]
+      },
+      "Área": {
+        "Urbana": [
+          382,
+          393,
+          407,
+          418,
+          421,
+          402
+        ],
+        "Rural": [
+          291,
+          303,
+          314,
+          323,
+          349,
+          338
+        ]
+      }
+    },
+    "Ciencia": {
+      "Nacional": {
+        "Perú": [
+          369,
+          373,
+          397,
+          404,
+          408,
+          406
+        ]
+      },
+      "Sexo": {
+        "Hombre": [
+          372,
+          376,
+          402,
+          411,
+          415,
+          411
+        ],
+        "Mujer": [
+          367,
+          370,
+          392,
+          397,
+          401,
+          400
+        ]
+      },
+      "Gestión": {
+        "Privada": [
+          429,
+          417,
+          438,
+          452,
+          454,
+          447
+        ],
+        "Pública": [
+          350,
+          358,
+          382,
+          388,
+          392,
+          390
+        ]
+      },
+      "Área": {
+        "Urbana": [
+          380,
+          380,
+          404,
+          411,
+          418,
+          416
+        ],
+        "Rural": [
+          300,
+          311,
+          334,
+          343,
+          359,
+          361
+        ]
+      }
+    }
+  },
+  "level2plusTrend": {
+    "Matemática": {
+      "2009": 26.4685,
+      "2012": 25.4186,
+      "2015": 33.8395,
+      "2018": 39.65,
+      "2022": 33.83,
+      "2025": 30.4771
+    },
+    "Lectura": {
+      "2009": 35.2317,
+      "2012": 40.1225,
+      "2015": 46.0976,
+      "2018": 45.69,
+      "2022": 49.59,
+      "2025": 41.8259
+    },
+    "Ciencia": {
+      "2009": 31.6922,
+      "2012": 31.5252,
+      "2015": 41.5382,
+      "2018": 45.5,
+      "2022": 47.4,
+      "2025": 47.4824
+    }
+  },
+  "equityContext": {
+    "Equidad socioeconómica": [
+      {
+        "indicador": "Estudiantes en cuartil socioeconómico internacional inferior",
+        "peru": 36,
+        "unidad": "%",
+        "ocde": null,
+        "anio": 2025
+      },
+      {
+        "indicador": "Puntaje Ciencia del cuartil internacional inferior",
+        "peru": 379,
+        "unidad": "puntos",
+        "ocde": null,
+        "anio": 2025
+      },
+      {
+        "indicador": "Brecha Ciencia: 25% favorecido - 25% desfavorecido",
+        "peru": 78,
+        "unidad": "puntos",
+        "ocde": 85,
+        "anio": 2025
+      },
+      {
+        "indicador": "Variación de Ciencia explicada por estatus socioeconómico",
+        "peru": 14,
+        "unidad": "%",
+        "ocde": 12,
+        "anio": 2025
+      },
+      {
+        "indicador": "Estudiantes desfavorecidos académicamente resilientes",
+        "peru": 10,
+        "unidad": "%",
+        "ocde": 12,
+        "anio": 2025
+      }
+    ],
+    "Actitudes y aprendizaje": [
+      {
+        "indicador": "Curiosidad por muchas cosas",
+        "peru": 81,
+        "unidad": "%",
+        "ocde": 73,
+        "anio": 2025
+      },
+      {
+        "indicador": "Esfuerzo adicional cuando el trabajo es difícil",
+        "peru": 74,
+        "unidad": "%",
+        "ocde": 60,
+        "anio": 2025
+      },
+      {
+        "indicador": "Considera que la escuela ha sido pérdida de tiempo",
+        "peru": 14,
+        "unidad": "%",
+        "ocde": 24,
+        "anio": 2025
+      },
+      {
+        "indicador": "Mentalidad de crecimiento",
+        "peru": 45,
+        "unidad": "%",
+        "ocde": 69,
+        "anio": 2025
+      },
+      {
+        "indicador": "Planifica frecuentemente cómo estudiar",
+        "peru": 44,
+        "unidad": "%",
+        "ocde": 37,
+        "anio": 2025
+      },
+      {
+        "indicador": "Comprueba su comprensión mediante preguntas",
+        "peru": 48,
+        "unidad": "%",
+        "ocde": 49,
+        "anio": 2025
+      },
+      {
+        "indicador": "Pide ayuda al docente cuando la necesita",
+        "peru": 79,
+        "unidad": "%",
+        "ocde": 77,
+        "anio": 2025
+      },
+      {
+        "indicador": "Pide ayuda a compañeros cuando no entiende",
+        "peru": 81,
+        "unidad": "%",
+        "ocde": 82,
+        "anio": 2025
+      }
+    ],
+    "Escuela y recursos": [
+      {
+        "indicador": "Escuelas con falta percibida de docentes",
+        "peru": 27,
+        "unidad": "%",
+        "ocde": 39,
+        "anio": 2025,
+        "peru_2022": 18
+      },
+      {
+        "indicador": "Escuelas con falta percibida de personal de apoyo",
+        "peru": 49,
+        "unidad": "%",
+        "ocde": 39,
+        "anio": 2025
+      },
+      {
+        "indicador": "Escuelas con carencia de material educativo",
+        "peru": 54,
+        "unidad": "%",
+        "ocde": null,
+        "anio": 2025,
+        "peru_2022": 55
+      },
+      {
+        "indicador": "Escuelas con carencia de infraestructura",
+        "peru": 42,
+        "unidad": "%",
+        "ocde": null,
+        "anio": 2025,
+        "peru_2022": 33
+      },
+      {
+        "indicador": "Uso digital escolar para aprender",
+        "peru": 1.4,
+        "unidad": "horas/día",
+        "ocde": 1.7,
+        "anio": 2025
+      },
+      {
+        "indicador": "Uso digital escolar para ocio",
+        "peru": 1.0,
+        "unidad": "horas/día",
+        "ocde": 1.1,
+        "anio": 2025
+      },
+      {
+        "indicador": "Distracción digital frecuente en Ciencia",
+        "peru": 24,
+        "unidad": "%",
+        "ocde": 28,
+        "anio": 2025
+      },
+      {
+        "indicador": "Estudiantes en escuelas con prohibición de celular",
+        "peru": 86,
+        "unidad": "%",
+        "ocde": 49,
+        "anio": 2025,
+        "peru_2022": 64
+      },
+      {
+        "indicador": "Uso semanal de chatbots de IA para aprender",
+        "peru": 54,
+        "unidad": "%",
+        "ocde": 46,
+        "anio": 2025
+      }
+    ],
+    "Bienestar y asistencia": [
+      {
+        "indicador": "Víctimas frecuentes de bullying",
+        "peru": 24,
+        "unidad": "%",
+        "ocde": 20,
+        "anio": 2025
+      },
+      {
+        "indicador": "Cyberbullying: publicación de información molesta sin consentimiento",
+        "peru": 4,
+        "unidad": "%",
+        "ocde": 3,
+        "anio": 2025
+      },
+      {
+        "indicador": "Familia pregunta semanalmente qué hizo en la escuela",
+        "peru": 58,
+        "unidad": "%",
+        "ocde": null,
+        "anio": 2025,
+        "peru_2022": 69
+      },
+      {
+        "indicador": "Conversaciones semanales sobre problemas escolares",
+        "peru": 45,
+        "unidad": "%",
+        "ocde": null,
+        "anio": 2025,
+        "peru_2022": 59
+      },
+      {
+        "indicador": "Faltó al menos un día en las dos semanas previas",
+        "peru": 39,
+        "unidad": "%",
+        "ocde": 22,
+        "anio": 2025,
+        "peru_2022": 28,
+        "peru_2018": 49
+      },
+      {
+        "indicador": "Faltó al menos a una clase en las dos semanas previas",
+        "peru": 27,
+        "unidad": "%",
+        "ocde": 24,
+        "anio": 2025,
+        "peru_2022": 20,
+        "peru_2018": 46
+      },
+      {
+        "indicador": "Llegó tarde en las dos semanas previas",
+        "peru": 69,
+        "unidad": "%",
+        "ocde": 50,
+        "anio": 2025,
+        "peru_2022": 61,
+        "peru_2018": 62
+      }
+    ],
+    "Nuevas competencias 2025": [
+      {
+        "indicador": "Resolución computacional de problemas - puntaje promedio",
+        "peru": 436,
+        "unidad": "puntos",
+        "ocde": 500,
+        "anio": 2025
+      },
+      {
+        "indicador": "Desempeño mejor de lo esperado según rendimiento en Ciencia",
+        "peru": 56.0,
+        "unidad": "%",
+        "ocde": 56.3,
+        "anio": 2025
+      },
+      {
+        "indicador": "Ciencia ambiental: alcanza o supera línea base",
+        "peru": 48,
+        "unidad": "%",
+        "ocde": 74,
+        "anio": 2025
+      }
+    ]
+  },
+  "methodNotes": {
+    "areaBreak": "La definición de ruralidad cambió en 2020. UMC advierte que no debe compararse directamente Área 2018 vs. 2022; en el gráfico se marca una ruptura metodológica.",
+    "level2": "El porcentaje exactamente en Nivel 2 no es equivalente al porcentaje que alcanza o supera Nivel 2. El segundo es el indicador de línea base usado por OECD.",
+    "sample": "Minedu brochure reporta 8 809 estudiantes; la nota país OECD reporta 6 991 estudiantes en la evaluación principal y señala una muestra adicional para Inglés. El app diferencia ambos conceptos.",
+    "cycle2000": "UMC presenta el primer resultado como ciclo 2000; la nota OECD indica que Perú participó por primera vez en PISA en 2001 (PISA Plus)."
+  },
+  "sources": {
+    "UMC PISA 2022": "https://umc.minedu.gob.pe/resultadospisa2022/",
+    "UMC Tendencias PISA 2000-2022": "https://umc.minedu.gob.pe/peru-tendencias-en-los-resultados-en-pisa-2000-2022/",
+    "UMC Bases PISA": "https://umc.minedu.gob.pe/bases-de-datos/",
+    "OECD Country Note Peru 2025": "https://www.oecd.org/en/publications/pisa-2025-results-volume-i-country-notes_2d4ff9ea-en/peru_0c319189-en.html",
+    "OECD PISA 2025 Volume I": "https://www.oecd.org/en/publications/pisa-2025-results-volume-i_73451bc5-en.html"
+  }
+}

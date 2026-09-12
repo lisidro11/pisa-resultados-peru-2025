@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Resultados PISA del Perú | Estadística DRELM</title>
-<link rel="stylesheet" href="css/styles.css?v=12">
+<link rel="stylesheet" href="css/styles.css?v=31">
 </head>
 <body>
 <header class="app-header">
@@ -16,13 +16,18 @@
   <div class="navbar">
     <div class="navlinks" id="nav"></div>
     <div class="navtools">
-      <div class="view-control" title="Ajusta la densidad del tablero sin reducir la tipografía">
-        <span>Visualización</span>
-        <button data-view="auto" class="active">Auto</button>
-        <button data-view="compact">Compacta</button>
-        <button data-view="normal">Normal</button>
-        <button data-view="expanded">Ampliada</button>
-        <button id="fullScreenBtn" class="fullscreen-btn" title="Pantalla completa">⛶</button>
+      <div class="view-menu">
+        <button id="viewMenuBtn" class="view-menu-btn" type="button" aria-haspopup="true" aria-expanded="false">
+          <span class="view-menu-icon">▣</span><span>Visualización</span><span class="view-menu-caret">▾</span>
+        </button>
+        <div id="viewMenuPanel" class="view-menu-panel" role="menu">
+          <button data-view="auto"><span>Automática <small id="autoViewState"></small></span><span class="view-check">✓</span></button>
+          <button data-view="compact"><span>Compacta</span><span class="view-check">✓</span></button>
+          <button data-view="normal"><span>Normal</span><span class="view-check">✓</span></button>
+          <button data-view="expanded"><span>Ampliada</span><span class="view-check">✓</span></button>
+          <div class="view-menu-divider"></div>
+          <button id="fullScreenBtn" class="fullscreen-menu-item"><span>Pantalla completa</span><span>⛶</span></button>
+        </div>
       </div>
       <div class="participation">▤ &nbsp; Perú ha participado en: <b>2000, 2009, 2012, 2015, 2018, 2022 y 2025.</b></div>
     </div>
@@ -59,11 +64,12 @@
         <div id="gapRows"></div>
       </div>
       <article class="metric level summary-level-card">
-        <div class="level-title">Nivel de desempeño en 2025</div>
-        <div class="level-sub">% de estudiantes ubicados en Nivel 2</div>
-        <div class="level-row"><span class="dot" style="background:#3c98a8"></span><b>Ciencia</b><strong>30,6 %</strong></div>
-        <div class="level-row"><span class="dot" style="background:#f6a31b"></span><b>Lectura</b><strong>26,0 %</strong></div>
-        <div class="level-row"><span class="dot" style="background:#20306f"></span><b>Matemática</b><strong>19,7 %</strong></div>
+        <div class="level-title">Línea base PISA 2025</div>
+        <div class="level-sub">% que alcanza o supera Nivel 2</div>
+        <div class="level-row"><span class="dot" style="background:#3c98a8"></span><b>Ciencia</b><strong>47,5 %</strong></div>
+        <div class="level-row"><span class="dot" style="background:#f6a31b"></span><b>Lectura</b><strong>41,8 %</strong></div>
+        <div class="level-row"><span class="dot" style="background:#20306f"></span><b>Matemática</b><strong>30,5 %</strong></div>
+        <div class="level-foot">No confundir con el porcentaje ubicado exactamente en Nivel 2.</div>
       </article>
     </aside>
   </div>
@@ -97,40 +103,58 @@
 </section>
 
 <section id="tendencia" class="page">
-  <div class="compact-pagehead"><div><div class="eyebrow">EVOLUCIÓN HISTÓRICA</div><h1>Tendencia de resultados PISA del Perú</h1><p>Ediciones comparables: 2009, 2012, 2015, 2018, 2022 y 2025.</p></div></div>
-  <div class="panel standard-panel trend-panel">
-    <div class="chart-legend-top">
-      <span><i style="background:#20306f"></i>Matemática</span>
-      <span><i style="background:#f6a31b"></i>Lectura</span>
-      <span><i style="background:#3c98a8"></i>Ciencia</span>
+  <div class="analysis-head trend-analysis-head">
+    <div><div class="eyebrow">EVOLUCIÓN HISTÓRICA</div><h1 id="trendTitle">Tendencia de resultados PISA del Perú</h1><p id="trendSubtitle">Ediciones comparables: 2009, 2012, 2015, 2018, 2022 y 2025.</p></div>
+    <div class="trend-controls">
+      <label class="inline-filter" id="trendCompWrap">Competencia<select id="trendArea"></select></label>
+      <div class="segmented" id="trendDimension">
+        <button class="active" data-dim="Nacional">Nacional</button>
+        <button data-dim="Sexo">Sexo</button>
+        <button data-dim="Gestión">Gestión</button>
+        <button data-dim="Área">Área</button>
+      </div>
     </div>
+  </div>
+  <div id="trendMethodNote" class="method-alert" style="display:none"></div>
+  <div class="panel standard-panel trend-panel">
+    <div class="chart-legend-top" id="trendLegend"></div>
     <div class="standard-chart" id="trendChart"></div>
   </div>
-  <div class="trend-cards">
-    <div class="trend-card" style="background:#f7f9fe"><b>Matemática</b><strong>391 → 382</strong><span class="trend-delta down">−8,8 puntos*</span><small>Disminución significativa respecto de 2022.</small></div>
-    <div class="trend-card" style="background:#fffaf1"><b>Lectura</b><strong>408 → 390</strong><span class="trend-delta down">−18,1 puntos*</span><small>Disminución significativa respecto de 2022.</small></div>
-    <div class="trend-card" style="background:#f3fbfc"><b>Ciencia</b><strong>408 → 406</strong><span class="trend-delta neutral">−2,2 puntos</span><small>El brochure señala que Perú mantiene sus resultados.</small></div>
-    <div class="trend-reading"><b>Lectura de la tendencia</b><p>Lectura y Matemática disminuyen respecto de 2022; Ciencia mantiene sus resultados. En las tres competencias, Perú permanece por debajo del promedio OCDE 2025.</p></div>
-  </div>
+  <div class="trend-cards" id="trendCards"></div>
 </section>
 
 <section id="niveles" class="page">
   <div class="analysis-head">
-    <div><div class="eyebrow">DESEMPEÑO</div><h1 id="levelsTitle">Niveles de desempeño – Ciencia</h1><p>Rangos de puntaje y distribución de estudiantes · PISA 2025.</p></div>
-    <label class="inline-filter">Competencia<select id="levelArea"></select></label>
-  </div>
-  <div class="levels-layout">
-    <div class="levels-info">
-      <div class="level-grid" id="levelGrid"></div>
-      <div class="note"><b>Nivel 2:</b> PISA lo considera la línea base o punto de partida del dominio requerido para participar en la sociedad actual.</div>
-    </div>
-    <div class="panel standard-panel levels-chart-panel">
-      <div class="section-minihead">
-        <b>Distribución de estudiantes por nivel</b>
-        <span>Porcentaje de estudiantes · PISA 2025</span>
+    <div><div class="eyebrow">DESEMPEÑO</div><h1 id="levelsTitle">Niveles de desempeño – Ciencia</h1><p>Distribución 2025 y evolución de la línea base PISA.</p></div>
+    <div class="levels-controls">
+      <label class="inline-filter">Competencia<select id="levelArea"></select></label>
+      <div class="segmented" id="levelsMode">
+        <button class="active" data-mode="current">Distribución 2025</button>
+        <button data-mode="history">Evolución Nivel 2+</button>
       </div>
-      <div class="standard-chart" id="levelsChart"></div>
     </div>
+  </div>
+  <div id="levelsCurrent">
+    <div class="levels-layout">
+      <div class="levels-info">
+        <div class="level-grid" id="levelGrid"></div>
+        <div class="note levels-method-note"><b>Lectura:</b> selecciona un nivel en la tabla para ver su descripción. Nivel 2 es la línea base de PISA.</div>
+      </div>
+      <div class="panel standard-panel levels-chart-panel">
+        <div class="section-minihead"><b>Distribución de estudiantes por nivel</b><span>Porcentaje de estudiantes · PISA 2025</span></div>
+        <div class="standard-chart" id="levelsChart"></div>
+      </div>
+    </div>
+  </div>
+  <div id="levelsHistory" style="display:none">
+    <div class="levels-history-grid">
+      <div class="panel standard-panel">
+        <div class="section-minihead"><b>Evolución: alcanza o supera Nivel 2</b><span>2009–2025</span></div>
+        <div class="standard-chart" id="levelsHistoryChart"></div>
+      </div>
+      <div class="levels-kpis" id="levelsHistoryKpis"></div>
+    </div>
+    <div class="method-alert"><b>Lectura correcta:</b> “En Nivel 2” representa solo ese nivel; “Nivel 2+” suma Nivel 2, 3, 4, 5 y 6 y es el indicador de línea base usado por OECD.</div>
   </div>
 </section>
 
@@ -153,40 +177,137 @@
   <div class="note"><b>Nota oficial:</b> El asterisco (*) marca diferencias estadísticamente significativas al 0,05 entre los estratos en 2025 y/o entre ciclos; la cruz (+) marca diferencias estadísticamente significativas al interior de cada estrato entre 2022 y 2025.</div>
 </section>
 
-<section id="regional" class="page">
+<section id="equidad" class="page">
   <div class="analysis-head">
-    <div><div class="eyebrow">CONTEXTO REGIONAL</div><h1 id="regionalTitle">Comparación regional 2025 – Ciencia</h1><p>Perú frente al promedio OCDE y países seleccionados de América Latina.</p></div>
-    <label class="inline-filter">Competencia<select id="regionalArea"></select></label>
+    <div><div class="eyebrow">EQUIDAD, EXPERIENCIA ESCOLAR Y NUEVAS COMPETENCIAS</div><h1>Equidad y contexto PISA 2025</h1><p>Indicadores oficiales de la nota país OECD para Perú. Los valores corresponden a 2025 salvo que se indique otro ciclo.</p></div>
   </div>
-  <div class="regional-layout">
-    <div class="panel standard-panel regional-main-panel">
-      <div class="section-minihead"><b>Resultados PISA 2025</b><span>Puntaje promedio por país / referencia</span></div>
-      <div class="tall-chart" id="regionalChart"></div>
-    </div>
-    <div class="panel standard-panel regional-improve-panel">
-      <div class="section-minihead stacked"><b>Promedio de mejora PISA 2009–2025</b><span>Indicador presentado en el brochure; no equivale a la diferencia simple de puntajes.</span></div>
-      <div class="standard-chart" id="improveChart"></div>
-      <div class="regional-insight" id="regionalInsight"></div>
+  <div class="segmented equity-tabs" id="equityTabs"></div>
+  <div class="equity-grid" id="equityGrid"></div>
+  <div class="equity-reading" id="equityReading"></div>
+  <div class="sourcebar"><span><b>Fuente:</b> OECD, PISA 2025 Results (Volume I) – Country Note: Peru.</span><span>Los indicadores de contexto provienen de cuestionarios a estudiantes/directores; deben interpretarse como asociaciones o reportes, no causalidad.</span></div>
+</section>
+
+<section id="regional" class="page">
+  <div class="analysis-head regional-head-v15">
+    <div><div class="eyebrow">CONTEXTO REGIONAL E INTERNACIONAL</div><h1 id="regionalMainTitle">Comparación internacional 2025 – Ciencia</h1><p>Perú frente a América Latina, la OCDE y sistemas educativos internacionales.</p></div>
+    <div class="regional-filters">
+      <label class="inline-filter">Competencia<select id="regionalArea"></select></label>
+      <label class="inline-filter" id="regionalYearWrap">Edición<select id="regionalYear"></select></label>
     </div>
   </div>
+
+  <div class="segmented regional-main-tabs" id="regionalView">
+    <button class="active" data-view="panorama">Panorama regional</button>
+    <button data-view="world">Panorama mundial</button>
+    <button data-view="compare">Comparar países</button>
+    <button data-view="evolution">Evolución regional</button>
+    <button data-view="baseline">Nivel 2+</button>
+    <button data-view="top">Alto desempeño</button>
+    <button data-view="equity">Equidad</button>
+    <button data-view="digital">Competencia digital</button>
+  </div>
+
+  <div id="regionalPanorama">
+    <div class="regional-classic-grid">
+      <div class="panel regional-ranking-panel">
+        <div class="section-minihead"><b id="rankTitle">Resultados PISA 2025</b><span>Orden por puntaje promedio estimado</span></div>
+        <div class="regional-ranking-table" id="regionalRanking"></div>
+      </div>
+      <div class="panel improvement-panel">
+        <div class="section-minihead"><b>Promedio de mejora PISA 2009–2025</b><span>Indicador del brochure; no es resta simple de puntajes.</span></div>
+        <div id="improvementChart" class="improvement-list"></div>
+        <div class="regional-reading-small" id="improvementReading"></div>
+      </div>
+    </div>
+    <div class="regional-kpi-row" id="regionalKpis"></div>
+    <div class="regional-reading-wide" id="regionalReading"></div>
+    <div class="method-alert"><b>Lectura correcta:</b> las posiciones se calculan únicamente entre los países con dato disponible en la edición seleccionada. No deben compararse “puestos” entre años porque cambia el conjunto de participantes. Las diferencias pequeñas de puntaje tampoco implican automáticamente diferencias estadísticamente significativas.</div>
+  </div>
+
+  <div id="regionalWorld" style="display:none">
+  <div class="world-toolbar">
+    <label>Edición<select id="worldYear"></select></label>
+    <label>Ámbito<select id="worldScope"><option value="all">Todos con resultado</option><option value="latam">América Latina</option><option value="leaders">Líderes mundiales</option><option value="oecd">OCDE / benchmark</option></select></label>
+    <label class="world-search">Buscar país / economía<input id="worldSearch" type="search" placeholder="Ej.: Japón, Singapur, Perú"></label>
+  </div>
+  <div class="world-kpis" id="worldKpis"></div>
+  <div class="panel world-panel">
+    <div class="section-minihead"><b id="worldTitle">Panorama mundial 2025</b><span>Desplázate para revisar los sistemas disponibles</span></div>
+    <div class="world-scroll" id="worldRanking"></div>
+  </div>
+  <div class="regional-reading-wide" id="worldReading"></div>
+  <div class="method-alert" id="worldCoverageNote"><b>Fuente:</b> OECD PISA 2025, Tabla I.1. La cobertura se actualiza automáticamente según la competencia.</div>
+</div>
+
+<div id="regionalCompare" style="display:none">
+  <div class="compare-toolbar">
+    <div><b id="compareToolbarTitle">Comparación personalizada</b><span>Selecciona hasta 6 países o economías.</span></div>
+    <button id="clearCompare" type="button">Limpiar</button>
+  </div>
+  <div class="compare-selector" id="worldCountrySelector"></div>
+  <div class="compare-legend" id="compareLegend"></div>
+  <div class="panel standard-panel">
+    <div class="section-minihead"><b id="compareTitle">Comparación seleccionada</b><span>PISA 2025</span></div>
+    <div class="standard-chart compare-chart" id="compareChart"></div>
+  </div>
+  <div class="regional-reading-wide" id="compareReading"></div>
+</div>
+
+<div id="regionalEvolution" style="display:none">
+    <div class="country-selector-wrap">
+      <b>Países para comparar</b><span>Selecciona hasta 5 series</span>
+      <div id="countrySelector" class="country-selector"></div>
+    </div>
+    <div class="compare-legend" id="regionalEvolutionLegend"></div><div class="panel standard-panel"><div class="section-minihead"><b id="evolutionTitle">Evolución regional</b><span>2009–2025</span></div><div class="standard-chart regional-evolution-chart" id="regionalEvolutionChart"></div></div>
+    <div class="regional-reading-wide" id="evolutionReading"></div>
+  </div>
+
+  <div id="regionalAdvanced" style="display:none">
+    <div class="intl-kpis" id="intlKpis"></div>
+    <div class="intl-flag-strip" id="intlFlagStrip"></div><div class="intl-main">
+      <div class="panel standard-panel"><div class="section-minihead"><b id="intlChartTitle">Comparación 2025</b><span id="intlChartSub"></span></div><div class="standard-chart intl-chart" id="regionalChart"></div></div>
+      <div class="intl-reading" id="intlReading"></div>
+    </div>
+    <div class="method-alert" id="intlNote"><b>Precaución:</b> las vistas de Nivel 2+, alto desempeño, equidad y competencia digital corresponden a 2025 y solo incluyen países/indicadores verificados en las fuentes oficiales incorporadas.</div>
+  </div>
+  <div class="sourcebar"><span><b>Fuentes:</b> UMC-Minedu, Informe nacional PISA 2022; Minedu/UMC, Brochure resultados PISA 2025; OECD PISA 2025.</span></div>
 </section>
 
 <section id="ficha" class="page">
   <div class="pagehead"><div class="eyebrow">PISA 2025 • PERÚ</div><h1>Ficha de la evaluación</h1></div>
-  <div class="statgrid"><div class="stat"><strong>8 809</strong><span>estudiantes evaluados</span></div><div class="stat"><strong>260</strong><span>instituciones educativas</span></div><div class="stat"><strong>70 %</strong><span>colegios públicos</span></div><div class="stat"><strong>30 %</strong><span>colegios privados</span></div><div class="stat"><strong>85,6 %</strong><span>representación de la población de 15 años</span></div></div>
-  <div class="pagehead"><h1 style="font-size:23px">Competencias evaluadas</h1></div>
-  <div class="compgrid"><div class="comp"><img src="assets/icons/ciencia.png"><b>Ciencia</b></div><div class="comp"><img src="assets/icons/matematica.png"><b>Matemática</b></div><div class="comp"><img src="assets/icons/lectura.png"><b>Lectura</b></div><div class="comp"><img src="assets/icons/mundo_digital.png"><b>Aprendizaje en el mundo digital</b></div><div class="comp"><img src="assets/icons/ingles.png"><b>Inglés</b></div></div>
-  <div class="note"><b>Aplicación:</b> por computadora, del 18 de agosto al 30 de setiembre de 2025. Resultados con representatividad nacional y por estratos de sexo, gestión y área.</div>
+  <div class="statgrid ficha-statgrid">
+    <div class="stat"><strong>8 809</strong><span>estudiantes reportados por el brochure Minedu</span></div>
+    <div class="stat"><strong>6 991</strong><span>completaron la evaluación principal, según OECD</span></div>
+    <div class="stat"><strong>260</strong><span>instituciones educativas</span></div>
+    <div class="stat"><strong>85,6 %</strong><span>cobertura/representación aproximada de la población de 15 años</span></div>
+    <div class="stat"><strong>70 % / 30 %</strong><span>público / privado en el brochure</span></div>
+  </div>
+  <div class="method-alert"><b>Por qué aparecen 8 809 y 6 991:</b> el brochure Minedu informa 8 809 estudiantes; la nota país OECD señala 6 991 estudiantes en la evaluación principal y una muestra adicional, de las mismas escuelas, para Inglés como lengua extranjera. Se muestran ambos datos para evitar mezclar universos.</div>
+  <div class="pagehead"><h1 style="font-size:23px">Competencias y resultados complementarios</h1></div>
+  <div class="compgrid">
+    <div class="comp"><img src="assets/icons/ciencia.png"><b>Ciencia</b></div>
+    <div class="comp"><img src="assets/icons/matematica.png"><b>Matemática</b></div>
+    <div class="comp"><img src="assets/icons/lectura.png"><b>Lectura</b></div>
+    <div class="comp"><img src="assets/icons/mundo_digital.png"><b>Resolución computacional de problemas</b><span>Perú 436 · OCDE 500</span></div>
+    <div class="comp"><img src="assets/icons/ingles.png"><b>Inglés</b><span>resultados específicos anunciados para 2027</span></div>
+  </div>
+  <div class="note"><b>Aplicación:</b> por computadora, del 18 de agosto al 30 de setiembre de 2025. Resultados con representatividad nacional y por estratos de sexo, gestión y área. Para la serie histórica, UMC etiqueta el primer ciclo como 2000; OECD señala la primera participación de Perú en 2001 (PISA Plus).</div>
 </section>
 
 <section id="datos" class="page">
   <div class="pagehead"><div class="eyebrow">BASE TRANSFORMADA</div><h1>Datos agregados</h1></div>
   <div class="filters"><label>Competencia<select id="dataArea"></select></label><label>Tabla<select id="dataType"><option value="avg">Medida promedio</option><option value="levels">Niveles de desempeño</option></select></label></div>
   <div class="tablewrap"><table id="dataTable"></table></div>
-  <div class="downloads"><a href="data/medida_promedio.csv" download>Descargar medida promedio</a><a href="data/niveles_desempeno.csv" download>Descargar niveles</a><a href="data/comparacion_regional_2025.csv" download>Descargar comparación regional</a></div>
+  
+  <div class="method-alert"><b>Datos auditables:</b> los CSV adicionales documentan fuente y notas metodológicas. En Área se marca la ruptura de comparabilidad por el cambio de definición de ruralidad en 2020.</div>
 </section>
 </main>
-<script src="js/data.js?v=12"></script>
-<script src="js/app.js?v=12"></script>
+<script src="js/data.js?v=31"></script>
+<script src="js/extended.js?v=31"></script>
+<script src="js/international.js?v=31"></script>
+<script src="js/regional_history.js?v=31"></script>
+<script src="js/world_2025.js?v=31"></script>
+<script src="js/world_history_2009_2025.js?v=31"></script>
+<script src="js/app.js?v=31"></script>
 </body>
 </html>

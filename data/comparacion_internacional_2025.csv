@@ -1,0 +1,84 @@
+﻿indicador,competencia,pais_referencia,valor,unidad,fuente
+Puntaje promedio,Ciencia,OCDE,482,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Ciencia,Uruguay,445,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Ciencia,Chile,442,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Ciencia,Costa Rica,424,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Ciencia,México,414,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Ciencia,Colombia,414,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Ciencia,Brasil,409,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Ciencia,Perú,406,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Ciencia,Ecuador,393,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Ciencia,Argentina,393,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Ciencia,El Salvador,385,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Ciencia,Rep. Dominicana,361,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Ciencia,Paraguay,355,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Ciencia,Guatemala,351,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Lectura,OCDE,461,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Lectura,Chile,436,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Lectura,Uruguay,423,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Lectura,Costa Rica,416,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Lectura,Brasil,408,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Lectura,México,408,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Lectura,Colombia,399,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Lectura,Perú,390,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Lectura,Argentina,389,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Lectura,Ecuador,385,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Lectura,El Salvador,366,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Lectura,Paraguay,352,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Lectura,Rep. Dominicana,346,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Lectura,Guatemala,337,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Matemática,OCDE,463,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Matemática,Uruguay,405,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Matemática,Chile,403,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Matemática,México,388,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Matemática,Costa Rica,387,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Matemática,Perú,382,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Matemática,Colombia,381,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Matemática,Brasil,377,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Matemática,Argentina,367,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Matemática,Ecuador,366,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Matemática,El Salvador,346,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Matemática,Rep. Dominicana,339,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Matemática,Guatemala,334,puntos,Minedu/UMC brochure PISA 2025; OECD
+Puntaje promedio,Matemática,Paraguay,334,puntos,Minedu/UMC brochure PISA 2025; OECD
+Nivel 2+,Ciencia,OCDE,74,%,OECD PISA 2025 Country Notes
+Nivel 2+,Ciencia,Uruguay,64,%,OECD PISA 2025 Country Notes
+Nivel 2+,Ciencia,Chile,63,%,OECD PISA 2025 Country Notes
+Nivel 2+,Ciencia,México,50,%,OECD PISA 2025 Country Notes
+Nivel 2+,Ciencia,Colombia,50,%,OECD PISA 2025 Country Notes
+Nivel 2+,Ciencia,Brasil,48,%,OECD PISA 2025 Country Notes
+Nivel 2+,Ciencia,Perú,47,%,OECD PISA 2025 Country Notes
+Nivel 2+,Lectura,OCDE,69,%,OECD PISA 2025 Country Notes
+Nivel 2+,Lectura,Chile,62,%,OECD PISA 2025 Country Notes
+Nivel 2+,Lectura,Uruguay,57,%,OECD PISA 2025 Country Notes
+Nivel 2+,Lectura,México,50,%,OECD PISA 2025 Country Notes
+Nivel 2+,Lectura,Brasil,49,%,OECD PISA 2025 Country Notes
+Nivel 2+,Lectura,Colombia,46,%,OECD PISA 2025 Country Notes
+Nivel 2+,Lectura,Perú,42,%,OECD PISA 2025 Country Notes
+Nivel 2+,Matemática,OCDE,65,%,OECD PISA 2025 Country Notes
+Nivel 2+,Matemática,Uruguay,42,%,OECD PISA 2025 Country Notes
+Nivel 2+,Matemática,Chile,41,%,OECD PISA 2025 Country Notes
+Nivel 2+,Matemática,México,30,%,OECD PISA 2025 Country Notes
+Nivel 2+,Matemática,Perú,30,%,OECD PISA 2025 Country Notes
+Nivel 2+,Matemática,Colombia,29,%,OECD PISA 2025 Country Notes
+Nivel 2+,Matemática,Brasil,28,%,OECD PISA 2025 Country Notes
+Nivel 5-6,Ciencia,OCDE,7,%,OECD PISA 2025 Country Notes
+Nivel 5-6,Ciencia,Uruguay,2,%,OECD PISA 2025 Country Notes
+Nivel 5-6,Ciencia,Chile,1,%,OECD PISA 2025 Country Notes
+Nivel 5-6,Ciencia,Colombia,1,%,OECD PISA 2025 Country Notes
+Nivel 5-6,Ciencia,Brasil,1,%,OECD PISA 2025 Country Notes
+Nivel 5-6,Ciencia,Perú,<1,%,OECD PISA 2025 Country Notes
+Nivel 5-6,Lectura,OCDE,6,%,OECD PISA 2025 Country Notes
+Nivel 5-6,Lectura,Chile,2,%,OECD PISA 2025 Country Notes
+Nivel 5-6,Lectura,Uruguay,2,%,OECD PISA 2025 Country Notes
+Nivel 5-6,Lectura,Colombia,1,%,OECD PISA 2025 Country Notes
+Nivel 5-6,Lectura,Brasil,1,%,OECD PISA 2025 Country Notes
+Nivel 5-6,Lectura,México,<1,%,OECD PISA 2025 Country Notes
+Nivel 5-6,Lectura,Perú,<1,%,OECD PISA 2025 Country Notes
+Nivel 5-6,Matemática,OCDE,8,%,OECD PISA 2025 Country Notes
+Nivel 5-6,Matemática,Uruguay,1,%,OECD PISA 2025 Country Notes
+Nivel 5-6,Matemática,Chile,<1,%,OECD PISA 2025 Country Notes
+Nivel 5-6,Matemática,México,<1,%,OECD PISA 2025 Country Notes
+Nivel 5-6,Matemática,Colombia,<1,%,OECD PISA 2025 Country Notes
+Nivel 5-6,Matemática,Brasil,<1,%,OECD PISA 2025 Country Notes
+Nivel 5-6,Matemática,Perú,<1,%,OECD PISA 2025 Country Notes
